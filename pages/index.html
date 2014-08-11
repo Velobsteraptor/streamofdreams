@@ -1,0 +1,77 @@
+{# ------------------------------------------------------- #}
+
+{# YOUR HOMEPAGE #}
+
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+
+{# ------------------------------------------------------- #}
+
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append "- Homepage" to the site title defined in base. #}
+{% block title %}{% parent %} - Hey Everybody!{% endblock %}
+
+{% block content %}
+<div class="live">
+    <div id="stream">
+        <object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=streamofdreams" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=streamofdreams&auto_play=true&start_volume=25" /></object>
+    </div>
+    <div id="chat">
+        <iframe frameborder="0" scrolling="no" src="http://twitch.tv/streamofdreams/chat?popout=" height="100%" width="100%"></iframe>
+    </div>
+</div>
+<div class="latest">
+    {% set data = get('articles','reviews','videos') %}
+    {% set data = data|sort('publish_date', true) %}
+    {% set data = paginate(data, 5) %}
+<h1>Latest</h1>
+    <ul>
+        {% for object in data %}
+            <li>
+                <a href="{{ url(object) }}">
+                <div id="latestimage" style=
+                     "background-image:url({{ object.image.url }}), url({{ object.url.thumbnail_url }});">
+                    {% if object.url.thumbnail_url %}
+                        <img src="../static/images/btn_playvideo.png">
+                    {% endif %}
+                </div>
+                <h2>
+                    {{ object.name }}</a>
+                </h2>
+                <h3>
+                    {{ object.tag }}
+                </h3>
+                <h4>
+                    {% for relation in getItems(object.host) %}
+                        <a href="{{ url(relation) }}">{{ relation.name }}</a>
+                        {% if not loop.last %},{% endif %}
+     			    {% endfor %}
+     			    {% for relation in getItems(object.cohost) %}
+                        and <a href="{{ url(relation) }}">{{ relation.name }}</a>
+                        {% if not loop.last %},{% endif %}
+     			    {% endfor %}
+                    {% if object.guest %}
+                        with {{ object.guest.first }} {{ object.guest.last }}
+                    {% endif %}
+                    {% if object.guest_2 %}
+                        and {{ object.guest_2.first }} {{ object.guest_2.last }}
+                    {% endif %}
+                    {% set rel = getItem(object.author) %}
+                    <a href="{{ url(rel) }}">{{ rel.name }}</a> |
+                    {{ object.publish_date|date('F d Y') }}
+                </h4>
+                <p>
+                    {{ object.description }}
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% include "templates/partials/paginator.html" %}
+{% endblock %}

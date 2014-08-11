@@ -1,0 +1,61 @@
+{# ------------------------------------------------------- #}
+
+{# LIST VIEW OF ALL videos #}
+
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+
+{# ------------------------------------------------------- #}
+
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append videos to the site title defined in base.html #}
+{% block title %}{% parent %} - Watch{% endblock %}
+
+{% block content %}
+<div class="latest">
+<h1>Watch</h1>
+    {% set data = get('videos') %}
+    {% set data = data|sort('publish_date', true) %}
+    {% set data = paginate(data, 5) %}
+    <ul>
+        {% for object in data %}
+            <li>
+                <a href="{{ url(object) }}">
+                <div id="latestimage" style=
+                     "background-image:url({{ object.url.thumbnail_url}});">
+                    <img src="../../static/images/btn_playvideo.png">
+                </div>
+                <h2>
+                    {{ object.name }}</a>
+                </h2>
+                <h3>
+                    {{ object.tag }}
+                </h3>
+                <h4>
+                    {% for relation in getItems(object.host) %}
+                        <a href="{{ url(relation) }}">{{ relation.name }}</a>
+                        {% if not loop.last %},{% endif %}
+     			    {% endfor %} 
+     			    {% for relation in getItems(object.cohost) %}
+                        and <a href="{{ url(relation) }}">{{ relation.name }}</a>
+                        {% if not loop.last %},{% endif %}
+     			    {% endfor %}
+                    {% set rel = getItem(object.author) %}
+                    <a href="{{ url(rel) }}">{{ rel.name }}</a> |
+                    {{ object.publish_date|date('F d Y') }}
+                </h4>
+                <p>
+                    {{ object.description }}
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% include "templates/partials/paginator.html" %}
+{% endblock %}

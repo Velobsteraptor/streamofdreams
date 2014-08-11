@@ -1,0 +1,37 @@
+{# ------------------------------------------------------- #}
+
+{# LIST VIEW OF ALL people #}
+
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+
+{# ------------------------------------------------------- #}
+
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append people to the site title defined in base.html #}
+{% block title %}{% parent %} - people{% endblock %}
+
+{% block content %}
+  {% set data = get('people') %}
+  {% set data = data|sort('publish_date', true) %}
+  {% set data = paginate(data, 5) %}
+<div class="contributor-list">
+  <h1>People</h1>
+    <ul>
+        {% for object in data %}
+            <li>
+                <a href="{{ url(object) }}">
+                <div id="contributor-list-image" style="background-image:url({{ object.image.url }});"></div>
+                <h2>{{ object.name }}</h2></a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% include "templates/partials/paginator.html" %}
+{% endblock %}

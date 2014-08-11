@@ -1,0 +1,68 @@
+{# ------------------------------------------------------- #}
+{# INDIVIDUAL VIEW FOR EACH people #}
+{# This page can use any data from http:localhost:2000/cms/#/form/people/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this people's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
+    <div class="contributor">
+  <h1>{{ item.name }}</h1>
+    <ul>
+        <li>
+            <div id="contributorimage" style="background-image:url({{ item.image.url }});"></div>
+        </li>
+        <li>
+            <h3>{{ item.bio }}</h3>
+        </li>
+        <li>
+            <h4>Email: <a href="mailto:{{ item.email }}">{{ item.email }}</a></h4>
+        </li>
+        <li>
+            <h4>Twitter: <a href="{{ item.twitter }}">{{ item.twitter_handle }}</a></h4>
+        </li>
+        {% if item.steam %}
+        <li>
+            <h4>Steam: <a href="{{ item.steam }}">{{ item.steam_id }}</a></h4>
+        </li>
+        {% endif %}
+        {% if item.skype %}
+        <li>
+            <h4>Skype: {{ item.skype }}</h4>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+<div class="recent">
+    <h1>Recent:</h1>
+    <ul>
+        {% set videohost = getItems(item.videos_host) %}
+        {% set videocohost = getItems(item.videos_cohost) %}
+        {% set author = getItems(item.article_author) %}
+        {% set relation = merge(videohost, videocohost, author) %}
+        {% set relation = relation|sort('publish_date', true) %}
+        {% set relation = paginate(relation, 5) %}
+        {% for item in relation %}
+            <li>
+                <div id="recentimage" style=
+                     "background-image:url({{ item.image.url}}), url({{ item.url.thumbnail_url}});">
+                {% if item.url.thumbnail_url %}
+                        <img src="../../../static/images/btn_playvideo.png">
+                {% endif %}</div>
+                <h2><a href="{{ url(relation) }}">{{ item.name }}</a></h2>
+                {% if not loop.last %},{% endif %}
+                <h3>{{ item.tag }}</h3>
+                <p>{{ item.description }}</p>
+                <h4>{{ item.publish_date|date('F d Y') }}</h4>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% include "templates/partials/paginator.html" %}
+{% endblock %}

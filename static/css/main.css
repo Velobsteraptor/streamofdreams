@@ -1,0 +1,1668 @@
+/* FONTS */
+    /* playball */@font-face {
+        font-family: 'Playball';
+        src:url('/static/fonts/Playball/Playball-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    /* bien */@font-face {
+        font-family: 'bien';
+        src:url('/static/fonts/diogene_bienetresocial/Bienetresocial.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+    /* lobster */@font-face {
+        font-family: 'Lobster';
+        src:url('/static/fonts/Lobster/Lobster.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+}
+@media (min-width: 1201px){
+body {
+    background-color: #1A1E21;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+    
+/* HEADER */
+.header{
+	position: relative;
+	width:100%;
+	height: 70px;
+    margin: -20px 0 50px 0;
+    padding: 0px;
+	background-color:#5a0606;
+	border-bottom: 3px solid #dfce61;
+	z-index: 3;
+    }
+	.header ul{
+		position: relative;
+		width: 80%;
+        padding: 25px;
+        font-family: 'Bien';
+		font-size: 1.2em;
+		text-shadow: 3px 3px 6px #5a0606;
+	}
+    .header ul img{
+		position:relative;
+		float: left;
+		width: 200px;
+        margin: -21px 20px 0 0;
+	}
+	.header ul li{
+		position: relative;
+        top: 15px;
+		margin-left: -7px;
+		padding: 5px 15px 10px 15px;
+		border-right: 1px solid #dfce61;
+		border-left: 1px solid #dfce61;
+        list-style-type: none;
+		display: inline;
+	}
+	.header a:link{
+		color: #dfce61;
+		text-decoration: none;
+	}
+	.header a:visited{
+		color: #dfce61;
+		text-decoration: none;
+	}
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    height: 50px;
+}
+    
+/* STREAM */
+.live{
+    position: relative;
+    width: 1140px;
+    height: 500px;
+    margin: 50px auto;
+    border: 2px solid #dfce61;
+}
+    #stream{
+        position: relative;
+        float:left;
+        width: 830px;
+        height: 500px;
+        border-right: 10px solid #dfce61;
+    }
+    #chat{
+        position: relative;
+        float: right;
+        width: 300px;
+        height: 500px;
+    }
+    
+/* LATEST */
+.latest{
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+    }
+.latest ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.latest ul li{
+    position: relative;
+    width: 100%;
+    height: 190px;
+    display:block;
+    margin: 0px auto;
+    padding: 10px 0 0 0; 
+    border-bottom: 1px solid #dfce61;
+    }
+.latest h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.latest ul li h2{
+    position: relative;
+    color: #dfce61;
+    margin: 0 0 0 0;
+    font-family: 'bien';
+    line-height: 1;
+}
+.latest ul li h2 a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }   
+.latest ul li h2 a:visited{
+    position: relative;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1em;
+    text-decoration: none;
+    }
+.latest ul li h3{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.latest ul li h4{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.latest ul li h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    }   
+.latest ul li h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    }
+.latest ul li p{
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8
+    }
+     #latestimage{
+        position: relative;
+        float: left;
+        width: 320px;
+        height: 180px;
+        margin: 0px 10px 0 0;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+        }
+     #latestimage img{
+        position: absolute;
+        top: 55px;
+        left: 120px;
+        width: 75px;
+        }
+
+
+/* POSTHEAD */
+.posthead{
+    position: relative;
+    width: 65%;
+    margin: 50px auto;
+    line-height: .3;
+    border-bottom: 2px solid #dfce61;
+    }
+.posthead img{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    }
+.posthead h1{
+    border: none;
+    margin: 0 0 0 2px;
+    line-height: 1;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    }
+.posthead h2{
+    color: #BDBBAF;
+    font-weight: 100;
+    line-height: 1;
+    }
+.posthead h4{
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+    line-height: .1;
+}
+.posthead h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.posthead h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+
+/* POST */
+.post{
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    }
+.post p{
+    font-weight: 100;
+    color: #A8A8A8;
+    }
+    /* FIRST LETTER */
+    #firstletter{
+        position: relative;
+        margin: -5px 15px -10px 0;
+        float: left;
+        color: #dfce61;
+        font-family: 'playball';
+        font-size: 2.5em;
+        }
+    
+/* VIDEOHEAD */
+.videohead{
+    position: relative;
+    width: 65%;
+    margin: 50px auto;
+    line-height: .3;
+    border-bottom: 2px solid #dfce61;
+    }
+.videohead h1{
+    border: none;
+    margin: 0 0 0 2px;
+    line-height: 1;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    }
+.videohead h4{
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.videohead h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.videohead h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+.videohead p{
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8;
+}
+
+/* VIDEO */
+.videocontainer{
+    position: relative;
+    width: 65%;
+    max-width: 854px;
+    margin: 0 auto;
+    text-align: center;
+    }
+.videocontainer iframe{
+    position: relative;
+    width: 100%;
+    border: 2px solid #dfce61;
+    } 
+
+/* CONTRIBUTOR LIST */
+.contributor-list{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.contributor-list ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.contributor-list ul li{
+    position: relative;
+    width: 202px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    }
+.contributor-list h1{
+    margin: 0 0 50px 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor-list h2{
+    position: relative;
+    width: 200px;
+    margin: 5px;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1.5em;
+    text-align: center;
+    }
+.contributor-list a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }
+.contributor-list a:visited{
+    color: #dfce61;
+    text-decoration: none;
+    }
+    #contributor-list-image{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0;
+        border: 1px solid #dfce61;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+    }
+
+/*CONTRIBUTOR */
+.contributor{
+    position: relative;
+    width: 65%;
+    height: 350px;
+    margin: 0px auto;
+    }
+.contributor ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.contributor ul li{
+    position: relative;
+    display:block;
+    margin: 0px auto;
+    padding: 0px 0 0 0; 
+    }
+.contributor h1{
+    margin: 0 0 50px 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor h2{
+    margin: 0;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor h3{
+    position: relative;
+    margin: -10px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.contributor h4{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+}
+.contributor h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    }   
+.contributor h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    }
+    #contributorimage{
+        position: relative;
+        float: left;
+        width: 250px;
+        height: 250px;
+        margin: 0px 10px 0 0;
+        border: 1px solid #dfce61;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	   overflow: hidden;
+    }
+    
+/* RECENT */
+.recent{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.recent ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.recent ul li{
+    position: relative;
+    width: 100%;
+    height: 210px;
+    display:block;
+    margin: 0px auto;
+    padding: 10px 0 0px 0; 
+    border-bottom: 1px solid #dfce61;
+    }
+.recent ul li img{
+    position: relative;
+	float: left;
+	width: 320px;
+	height: 200px;
+    margin: 0px 10px 0 0;
+    background-size: cover; 
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+	overflow: hidden;
+    }
+.recent h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recent ul li h2{
+    position: relative;
+    color: #dfce61;
+    margin: 0 0 0 0;
+    font-family: 'bien';
+    line-height: 1;
+}
+.recent ul li h2 a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }   
+.recent ul li h2 a:visited{
+    position: relative;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1em;
+    text-decoration: none;
+    }
+.recent ul li h3{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.recent ul li h4{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.recent ul li h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.recent ul li h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+.recent ul li p{
+    position: relative;
+    margin: 3px 0 0 0;
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8
+    } 
+    
+    #recentimage{
+        position: relative;
+        float: left;
+        width: 320px;
+        height: 180px;
+        margin: 0px 10px 0 0;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+        }
+    #recentimage img{
+        position: absolute;
+        top: 55px;
+        left: 120px;
+        width: 75px;
+        height: 75px;
+        }
+    
+/* PAGINATOR */
+.paginator{
+    position: relative;
+    width: 1140px;
+    margin: 0px auto;   
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 1.5em;
+    }
+.paginator ul{
+    position: relative;
+    margin: 10px 0 0 0;
+    float: right;
+    }
+.paginator ul li{
+    position: relative;
+    display: inline;
+    }
+.paginator ul li a:link{
+    color: #dfce61;
+    }
+.paginator ul li a:visited{
+    color: #dfce61;
+    }
+
+}
+
+@media (max-width: 1200px) and (min-width: 801px){
+body {
+    background-color: #1A1E21;
+}   
+/* HEADER */
+.header{
+	position: relative;
+	width:100%;
+	height: 70px;
+    margin: -20px 0 50px 0;
+    padding: 0px;
+	background-color:#5a0606;
+	border-bottom: 3px solid #dfce61;
+	z-index: 3;
+    }
+	.header ul{
+		position: relative;
+		width: 80%;
+        padding: 25px;
+        font-family: 'Bien';
+		font-size: 1.2em;
+		text-shadow: 3px 3px 6px #5a0606;
+	}
+    .header ul img{
+		position:relative;
+		float: left;
+		width: 200px;
+        margin: -21px 20px 0 0;
+	}
+	.header ul li{
+		position: relative;
+        top: 15px;
+		margin-left: -7px;
+		padding: 5px 15px 10px 15px;
+		border-right: 1px solid #dfce61;
+		border-left: 1px solid #dfce61;
+        list-style-type: none;
+		display: inline;
+	}
+	.header a:link{
+		color: #dfce61;
+		text-decoration: none;
+	}
+	.header a:visited{
+		color: #dfce61;
+		text-decoration: none;
+	}
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    height: 50px;
+}
+    
+/* STREAM */
+.live{
+    position: relative;
+    width: 75%;
+    min-width: 800px;
+    height: 500px;
+    margin: 50px auto;
+    }
+    #stream{
+        position: relative;
+        float:left;
+        width: 70%;
+        height: 500px;
+        border: 2px solid #dfce61;
+        border-right: 8px solid #dfce61;
+        }
+    #chat{
+        position: relative;
+        float: left;
+        width: 28%;
+        height: 500px;
+        border: 2px solid #dfce61;
+        }
+    
+/* LATEST */
+.latest{
+    position: relative;
+    width: 75%;
+    min-width: 800px;
+    margin: 0 auto;
+    }
+.latest ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.latest ul li{
+    position: relative;
+    width: 100%;
+    height: 190px;
+    display:block;
+    margin: 0px auto;
+    padding: 10px 0 0 0; 
+    border-bottom: 1px solid #dfce61;
+    }
+.latest h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.latest ul li h2{
+    position: relative;
+    color: #dfce61;
+    margin: 0 0 0 0;
+    font-family: 'bien';
+    line-height: 1;
+}
+.latest ul li h2 a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }   
+.latest ul li h2 a:visited{
+    position: relative;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1em;
+    text-decoration: none;
+    }
+.latest ul li h3{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.latest ul li h4{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.latest ul li h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    }   
+.latest ul li h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    }
+.latest ul li p{
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8
+    }
+     #latestimage{
+        position: relative;
+        float: left;
+        width: 320px;
+        height: 180px;
+        margin: 0px 10px 0 0;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+        }
+     #latestimage img{
+        position: absolute;
+        top: 55px;
+        left: 120px;
+        width: 75px;
+        }
+
+/* POSTHEAD */
+.posthead{
+    position: relative;
+    width: 65%;
+    margin: 50px auto;
+    border-bottom: 2px solid #dfce61;
+    }
+.posthead img{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    }
+.posthead h1{
+    border: none;
+    margin: 0 0 0 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    }
+.posthead h2{
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.posthead h4{
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+    line-height: .1;
+}
+.posthead h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.posthead h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+
+/* POST */
+.post{
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    }
+.post p{
+    font-weight: 100;
+    color: #A8A8A8;
+    }
+    /* FIRST LETTER */
+    #firstletter{
+        position: relative;
+        margin: -5px 15px -10px 0;
+        float: left;
+        color: #dfce61;
+        font-family: 'playball';
+        font-size: 2.5em;
+        }
+    
+/* VIDEOHEAD */
+.videohead{
+    position: relative;
+    width: 65%;
+    margin: 50px auto;
+    line-height: .3;
+    border-bottom: 2px solid #dfce61;
+    }
+.videohead h1{
+    border: none;
+    margin: 0 0 0 2px;
+    line-height: 1;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    }
+.videohead h4{
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+    }
+.videohead h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.videohead h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+.videohead p{
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8;
+    }
+    
+/* VIDEO */
+.videocontainer{
+    position: relative;
+    width: 65%;
+    max-width: 854px;
+    margin: 0 auto;
+    text-align: center;
+    }
+.videocontainer iframe{
+    position: relative;
+    width: 100%;
+    border: 2px solid #dfce61;
+    }
+    
+/* CONTRIBUTOR LIST */
+.contributor-list{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.contributor-list ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.contributor-list ul li{
+    position: relative;
+    width: 202px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    }
+.contributor-list h1{
+    margin: 0 0 50px 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor-list h2{
+    position: relative;
+    width: 200px;
+    margin: 5px;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1.5em;
+    text-align: center;
+    }
+.contributor-list a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }
+.contributor-list a:visited{
+    color: #dfce61;
+    text-decoration: none;
+    }
+    #contributor-list-image{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0;
+        border: 1px solid #dfce61;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+    }
+
+/*CONTRIBUTOR */
+.contributor{
+    position: relative;
+    width: 65%;
+    height: 350px;
+    margin: 0px auto;
+    }
+.contributor ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.contributor ul li{
+    position: relative;
+    display:block;
+    margin: 0px auto;
+    padding: 0px 0 0 0; 
+    }
+.contributor h1{
+    margin: 0 0 50px 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor h2{
+    margin: 0;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor h3{
+    position: relative;
+    margin: -10px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.contributor h4{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+}
+.contributor h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    }   
+.contributor h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    }
+    #contributorimage{
+        position: relative;
+        float: left;
+        width: 250px;
+        height: 250px;
+        margin: 0px 10px 0 0;
+        border: 1px solid #dfce61;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	   overflow: hidden;
+    }
+    
+/* RECENT */
+.recent{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.recent ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.recent ul li{
+    position: relative;
+    width: 100%;
+    height: 210px;
+    display:block;
+    margin: 0px auto;
+    padding: 10px 0 0px 0; 
+    border-bottom: 1px solid #dfce61;
+    }
+.recent ul li img{
+    position: relative;
+	float: left;
+	width: 320px;
+	height: 200px;
+    margin: 0px 10px 0 0;
+    background-size: cover; 
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+	overflow: hidden;
+    }
+.recent h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recent ul li h2{
+    position: relative;
+    color: #dfce61;
+    margin: 0 0 0 0;
+    font-family: 'bien';
+    line-height: 1;
+}
+.recent ul li h2 a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }   
+.recent ul li h2 a:visited{
+    position: relative;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1em;
+    text-decoration: none;
+    }
+.recent ul li h3{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.recent ul li h4{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.recent ul li h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.recent ul li h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+.recent ul li p{
+    position: relative;
+    margin: 3px 0 0 0;
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8
+    }
+    #recentimage{
+        position: relative;
+        float: left;
+        width: 320px;
+        height: 180px;
+        margin: 0px 10px 0 0;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+        }
+    #recentimage img{
+        position: absolute;
+        top: 55px;
+        left: 120px;
+        width: 75px;
+        height: 75px;
+        }
+
+/* PAGINATOR */
+.paginator{
+    position: relative;
+    width: 75%;
+    min-width: 800px;
+    margin: 0px auto;   
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 1.5em;
+    }
+.paginator ul{
+    position: relative;
+    margin: 10px 0 0 0;
+    float: right;
+    }
+.paginator ul li{
+    position: relative;
+    display: inline;
+    }
+.paginator ul li a:link{
+    color: #dfce61;
+    }
+.paginator ul li a:visited{
+    color: #dfce61;
+    }
+    
+}
+
+@media (max-width: 800px){
+body {
+    background-color: #1A1E21;
+}
+    
+/* HEADER */
+.header{
+	position: relative;
+	width:100%;
+	height: 70px;
+    margin: -20px 0 50px 0;
+    padding: 0px;
+	background-color:#5a0606;
+	border-bottom: 3px solid #dfce61;
+	z-index: 3;
+    }
+	.header ul{
+		position: relative;
+        font-family: 'Bien';
+		font-size: 1.2em;
+		text-shadow: 3px 3px 6px #5a0606;
+        text-align: center;
+	}
+    .header ul img{
+		position:relative;
+		width: 200px;
+        margin: 3px 0 0 -45px;
+	}
+	.header ul li{
+        display: none;
+	}
+	.header a:link{
+		color: #dfce61;
+		text-decoration: none;
+	}
+	.header a:visited{
+		color: #dfce61;
+		text-decoration: none;
+	}
+    
+/* FOOTER */
+.footer{
+    width: 100%;
+    height: 50px;
+}
+    
+/* STREAM */
+.live{
+    position: relative;
+    width: 75%;
+    height: 750px;
+    margin: 50px auto;
+    border: 2px solid #dfce61;
+    }
+    #stream{
+        position: relative;
+        width: 100%;
+        height: 370px;
+        border-bottom: 10px solid #dfce61;
+    }
+    #chat{
+        position: relative;
+        width: 100%;
+        height: 370px;
+    }
+    
+/* LATEST */
+.latest{
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+    }
+.latest ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.latest ul li{
+    position: relative;
+    width: 100%;
+    display:block;
+    margin: 0px auto;
+    padding: 10px 0 0 0; 
+    border-bottom: 1px solid #dfce61;
+    }
+.latest h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.latest ul li h2{
+    position: relative;
+    color: #dfce61;
+    margin: 0;
+    font-family: 'bien';
+    line-height: 1;
+}
+.latest ul li h2 a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }   
+.latest ul li h2 a:visited{
+    position: relative;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1em;
+    text-decoration: none;
+    }
+.latest ul li h3{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.latest ul li h4{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.latest ul li h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    }   
+.latest ul li h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    }
+.latest ul li p{
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8
+    }
+    #latestimage{
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100px;
+        margin: 0 0 10px 0;
+        background-size: cover;
+        background-position: 50% 25%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+    }
+    #latestimage img{
+        position: absolute;
+        top: 12px;
+        left: 40%;
+        width: 75px;
+    }
+
+/* POSTHEAD */
+.posthead{
+    position: relative;
+    width: 65%;
+    min-width: 350px;
+    margin: 50px auto;
+    line-height: .3;
+    border-bottom: 2px solid #dfce61;
+    }
+.posthead img{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    }
+.posthead h1{
+    border: none;
+    margin: 0 0 0 2px;
+    line-height: 1;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    }
+.posthead h2{
+    color: #BDBBAF;
+    font-weight: 100;
+    line-height: 1;
+    }
+.posthead h4{
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+    line-height: .1;
+}
+.posthead h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.posthead h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+
+/* POST */
+.post{
+    position: relative;
+    width: 65%;
+    min-width: 350px;
+    margin: 0 auto;
+    }
+.post p{
+    font-weight: 100;
+    color: #A8A8A8;
+    }
+    /* FIRST LETTER */
+    #firstletter{
+        position: relative;
+        margin: -5px 15px -10px 0;
+        float: left;
+        color: #dfce61;
+        font-family: 'playball';
+        font-size: 2.5em;
+        }
+    
+/* VIDEOHEAD */
+.videohead{
+    position: relative;
+    width: 65%;
+    min-width: 350px;
+    margin: 50px auto;
+    line-height: .3;
+    border-bottom: 2px solid #dfce61;
+    }
+.videohead h1{
+    border: none;
+    margin: 0 0 0 2px;
+    line-height: 1;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    }
+.videohead h4{
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.videohead h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.videohead h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+.videohead p{
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8;
+    }
+
+/*VIDEO CONTANER*/
+.videocontainer{
+    position: relative;
+    width: 65%;
+    max-width: 854px;
+    min-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    }
+.videocontainer iframe{
+    position: relative;
+    width: 100%;
+    border: 2px solid #dfce61;
+    }
+    
+/* CONTRIBUTOR LIST */
+.contributor-list{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.contributor-list ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.contributor-list ul li{
+    position: relative;
+    width: 202px;
+    margin: 0 auto;
+    }
+.contributor-list h1{
+    margin: 0 0 50px 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor-list h2{
+    position: relative;
+    width: 200px;
+    margin: 5px;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1.5em;
+    text-align: center;
+    }
+.contributor-list a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }
+.contributor-list a:visited{
+    color: #dfce61;
+    text-decoration: none;
+    }
+    #contributor-list-image{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0;
+        border: 1px solid #dfce61;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	    overflow: hidden;
+    }
+
+/*CONTRIBUTOR */
+.contributor{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.contributor ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.contributor ul li{
+    position: relative;
+    display:block;
+    margin: 0px auto;
+    padding: 0px 0 0 0; 
+    }
+.contributor h1{
+    margin: 0 0 50px 2px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor h2{
+    margin: 0;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 2px solid #dfce61;
+    }
+.contributor h3{
+    position: relative;
+    margin: -10px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.contributor h4{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+}
+.contributor h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    }   
+.contributor h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    }
+    #contributorimage{
+        position: relative;
+        float: left;
+        width: 250px;
+        height: 250px;
+        margin: 0px 10px 0 0;
+        border: 1px solid #dfce61;
+        background-size: cover; 
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+	   overflow: hidden;
+    }
+    
+/* RECENT */
+.recent{
+    position: relative;
+    width: 65%;
+    margin: 0px auto;
+    }
+.recent ul{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    }
+.recent ul li{
+    position: relative;
+    width: 100%;
+    display:block;
+    margin: 0px auto;
+    padding: 10px 0 0px 0; 
+    border-bottom: 1px solid #dfce61;
+    }
+.recent h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recent ul li h2{
+    position: relative;
+    color: #dfce61;
+    margin: 0 0 0 0;
+    font-family: 'bien';
+    line-height: 1;
+}
+.recent ul li h2 a:link{
+    color: #dfce61;
+    text-decoration: none;
+    }   
+.recent ul li h2 a:visited{
+    position: relative;
+    color: #dfce61;
+    font-family: 'bien';
+    font-size: 1em;
+    text-decoration: none;
+    }
+.recent ul li h3{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #BDBBAF;
+    font-weight: 100;
+    }
+.recent ul li h4{
+    position: relative;
+    margin: 5px 0 0 0;
+    color: #fff;
+    font-size: .75em;
+    font-weight: 100;
+}
+.recent ul li h4 a:link{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    text-decoration: none;
+    }   
+.recent ul li h4 a:visited{
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    }
+.recent ul li p{
+    position: relative;
+    margin: 3px 0 0 0;
+    font-weight: 100;
+    line-height: 1;
+    color: #A8A8A8
+    }
+    #recentimage{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        margin: 0px 10px 10px 0;
+        background-size: cover; 
+        background-position: 50% 25%;
+        background-repeat: no-repeat;
+	   overflow: hidden;
+    }
+    #recentimage img{
+        position: absolute;
+        top: 12px;
+        left: 40%;
+        width: 75px;
+    }
+    
+/* PAGINATOR */
+.paginator{
+    position: relative;
+    width: 75%;
+    margin: 0px auto;   
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 1.5em;
+    }
+.paginator ul{
+    position: relative;
+    margin: 10px 0 0 0;
+    float: right;
+    }
+.paginator ul li{
+    position: relative;
+    display: inline;
+    }
+.paginator ul li a:link{
+    color: #dfce61;
+    }
+.paginator ul li a:visited{
+    color: #dfce61;
+    }
+    
+}

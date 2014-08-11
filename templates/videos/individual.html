@@ -1,0 +1,40 @@
+{# ------------------------------------------------------- #}
+{# INDIVIDUAL VIEW FOR EACH videos #}
+{# This page can use any data from http:localhost:2000/cms/#/form/videos/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this videos's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
+<div class="videohead">
+    <h1>{{ item.name }}</h1>
+    <p>{{ item.description }}</p>
+    <h4>
+        {% for relation in getItems(item.host) %}
+            <a href="{{ url(relation) }}">{{ relation.name }}</a>
+            {% if not loop.last %},{% endif %}
+        {% endfor %} 
+        {% for relation in getItems(item.cohost) %}
+            and <a href="{{ url(relation) }}">{{ relation.name }}</a>
+            {% if not loop.last %},{% endif %}
+        {% endfor %} 
+        {% if item.guest %}
+         with {{ item.guest.firstname }} {{ item.guest.lastname }}
+        {% endif %}
+        {% if item.guest_2 %}
+         and {{ item.guest_2.firstname }} {{ item.guest@.lastname }}
+        {% endif %}
+        | {{ item.publish_date|date('F d Y') }}
+    </h4>
+</div>
+<div class="videocontainer">
+    {{ item.url.html|safe  }}
+</div>
+    
+{% endblock %}
