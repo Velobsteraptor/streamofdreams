@@ -27,6 +27,11 @@
     </div>
 </div>
 <div class="latest">
+    <div class="twitter">
+        <h1>Contributor Tweets</h1>
+        <a class="twitter-timeline" href="https://twitter.com/VideoGameBubbos/lists/stream-of-dream-tweets" data-widget-id="499423274078449664" data-chrome="noheader nofooter transparent" data-tweet-limit="5">Tweets from https://twitter.com/VideoGameBubbos/lists/stream-of-dream-tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>    
     {% set data = get('articles','reviews','videos') %}
     {% set data = data|sort('publish_date', true) %}
     {% set data = paginate(data, 5) %}
@@ -35,12 +40,15 @@
         {% for object in data %}
             <li>
                 <a href="{{ url(object) }}">
-                <div id="latestimage" style=
+                <div class="latestimage">
+                    <div id="latestimage" style=
                      "background-image:url({{ object.image.url }}), url({{ object.url.thumbnail_url }});">
-                    {% if object.url.thumbnail_url %}
+                        {% if object.url.thumbnail_url %}
                         <img src="../static/images/btn_playvideo.png">
                     {% endif %}
+                    </div>
                 </div>
+                <div class="latesttext">
                 <h2>
                     {{ object.name }}</a>
                 </h2>
@@ -66,12 +74,18 @@
                     <a href="{{ url(rel) }}">{{ rel.name }}</a> |
                     {{ object.publish_date|date('F d Y') }}
                 </h4>
+                {% if object.rating %}
+                    <div id="latestrating">
+                        {{object.rating }}
+                    </div>
+                {% endif %}
                 <p>
                     {{ object.description }}
                 </p>
+                </div>
             </li>
         {% endfor %}
     </ul>
-</div>
 {% include "templates/partials/paginator.html" %}
+</div>
 {% endblock %}

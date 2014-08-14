@@ -1,6 +1,6 @@
 {# ------------------------------------------------------- #}
 
-{# LIST VIEW OF ALL articles #}
+{# LIST VIEW OF ALL reviews #}
 
 {# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
 {# http://paularmstrong.github.io/swig/docs/tags/ #}
@@ -14,13 +14,13 @@
 {# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
 
-{# This sets our page <title>. It will append articles to the site title defined in base.html #}
-{% block title %}{% parent %} - Read{% endblock %}
+{# This sets our page <title>. It will append reviews to the site title defined in base.html #}
+{% block title %}{% parent %} - reviews{% endblock %}
 
 {% block content %}
 <div class="latest">
 <h1>Read</h1>
-    {% set data = get('articles') %}
+    {% set data = get('reviews') %}
     {% set data = data|sort('publish_date', true) %}
     {% set data = paginate(data, 5) %}
     <ul>

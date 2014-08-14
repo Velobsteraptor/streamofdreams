@@ -24,7 +24,7 @@
   {% endif %}
 
   {% if curPage != 1 && curPage != maxPage %}
-  <li class="active"><a style="text decoration: none;" href="{{ getPageUrl(curPage) }}">{{ curPage }}</a></li>
+  <li class="active"><a href="{{ getPageUrl(curPage) }}">{{ curPage }}</a></li>
   {% endif %}
 
   {% if curPage < maxPage - 1 %}

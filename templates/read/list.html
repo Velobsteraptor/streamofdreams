@@ -1,6 +1,6 @@
 {# ------------------------------------------------------- #}
 
-{# LIST VIEW OF ALL articles #}
+{# LIST VIEW OF ALL articles and reviews #}
 
 {# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
 {# http://paularmstrong.github.io/swig/docs/tags/ #}
@@ -18,23 +18,25 @@
 {% block title %}{% parent %} - Read{% endblock %}
 
 {% block content %}
-<div class="latest">
+<div class="archive">
 <h1>Read</h1>
-    {% set data = get('articles') %}
+    {% set data = get('articles', 'reviews') %}
     {% set data = data|sort('publish_date', true) %}
     {% set data = paginate(data, 5) %}
     <ul>
         {% for object in data %}
             <li>
                 <a href="{{ url(object) }}">
-                <div id="latestimage" style=
-                     "background-image:url({{ object.image.url}});"></div>
+                    <div id="archiveimage" style=
+                     "background-image:url({{ object.image.url}});">
+                    </div>
                 <h2>
                     {{ object.name }}</a>
                 </h2>
                 <h3>
                     {{ object.tag }}
                 </h3>
+                </a>
                 <h4>
                     {% for relation in getItems(object.host) %}
                         <a href="{{ url(relation) }}">{{ relation.name }}</a>
@@ -48,6 +50,11 @@
                     <a href="{{ url(rel) }}">{{ rel.name }}</a> |
                     {{ object.publish_date|date('F d Y') }}
                 </h4>
+                {% if object.rating %}
+                    <div id="latestrating">
+                        {{object.rating }}
+                    </div>
+                {% endif %}
                 <p>
                     {{ object.description }}
                 </p>

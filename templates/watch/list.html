@@ -1,6 +1,6 @@
 {# ------------------------------------------------------- #}
 
-{# LIST VIEW OF ALL articles #}
+{# LIST VIEW OF ALL videos #}
 
 {# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
 {# http://paularmstrong.github.io/swig/docs/tags/ #}
@@ -14,13 +14,13 @@
 {# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
 
-{# This sets our page <title>. It will append articles to the site title defined in base.html #}
-{% block title %}{% parent %} - Read{% endblock %}
+{# This sets our page <title>. It will append videos to the site title defined in base.html #}
+{% block title %}{% parent %} - Watch{% endblock %}
 
 {% block content %}
 <div class="latest">
-<h1>Read</h1>
-    {% set data = get('articles') %}
+<h1>Watch</h1>
+    {% set data = get('videos') %}
     {% set data = data|sort('publish_date', true) %}
     {% set data = paginate(data, 5) %}
     <ul>
@@ -28,7 +28,9 @@
             <li>
                 <a href="{{ url(object) }}">
                 <div id="latestimage" style=
-                     "background-image:url({{ object.image.url}});"></div>
+                     "background-image:url({{ object.url.thumbnail_url}});">
+                    <img src="../../static/images/btn_playvideo.png">
+                </div>
                 <h2>
                     {{ object.name }}</a>
                 </h2>
