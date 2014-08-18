@@ -45,24 +45,33 @@
         {% set videohost = getItems(item.videos_host) %}
         {% set videocohost = getItems(item.videos_cohost) %}
         {% set author = getItems(item.article_author) %}
-        {% set relation = merge(videohost, videocohost, author) %}
+        {% set reviewauthor = getItems(item.reviews_author) %}
+        {% set relation = merge(videohost, videocohost, author, reviewauthor) %}
         {% set relation = relation|sort('publish_date', true) %}
         {% set relation = paginate(relation, 5) %}
         {% for item in relation %}
             <li>
-                <div id="recentimage" style=
-                     "background-image:url({{ item.image.url}}), url({{ item.url.thumbnail_url}});">
-                {% if item.url.thumbnail_url %}
+                <div class="recentimage">
+                    <div id="recentimage" style="background-image:url({{ item.image.url}}), url({{ item.url.thumbnail_url}});">
+                    {% if item.url.thumbnail_url %}
                         <img src="../../../static/images/btn_playvideo.png">
-                {% endif %}</div>
-                <h2><a href="{{ url(relation) }}">{{ item.name }}</a></h2>
-                {% if not loop.last %},{% endif %}
-                <h3>{{ item.tag }}</h3>
-                <p>{{ item.description }}</p>
-                <h4>{{ item.publish_date|date('F d Y') }}</h4>
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="recenttext">
+                    <h4>{{ item.publish_date|date('F d Y') }}</h4>
+                    <h2><a href="{{ url(relation) }}">{{ item.name }}</a></h2>
+                    <h3>{{ item.tag }}</h3>
+                    {% if item.rating %}
+                        <div id="latestrating">
+                            {{ item.rating }}
+                        </div>
+                    {% endif %}
+                    <p>{{ item.description }}</p>
+                </div>
             </li>
         {% endfor %}
     </ul>
+    {% include "templates/partials/paginator.html" %}
 </div>
-{% include "templates/partials/paginator.html" %}
 {% endblock %}

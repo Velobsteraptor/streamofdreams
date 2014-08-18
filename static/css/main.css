@@ -25,7 +25,7 @@
 body {
     background-color: #1A1E21;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
+    }
     
 /* HEADER */
 .header{
@@ -39,46 +39,46 @@ body {
 	z-index: 3;
     }
 .header ul{
-		position: relative;
-		width: 80%;
-        padding: 25px;
-        font-family: 'Bien';
-		font-size: 1.2em;
-		text-shadow: 3px 3px 6px #5a0606;
+    position: relative;
+    width: 80%;
+    padding: 25px;
+    font-family: 'Bien';
+    font-size: 1.2em;
+    text-shadow: 3px 3px 6px #5a0606;
 	}
 .header ul img{
-		position:relative;
-		float: left;
-		width: 200px;
-        margin: -21px 20px 0 0;
+    position:relative;
+    float: left;
+    width: 200px;
+    margin: -21px 20px 0 0;
 	}
 .header ul li{
-		position: relative;
-        top: 15px;
-		margin-left: -7px;
-		padding: 5px 15px 10px 15px;
-		border-right: 1px solid #dfce61;
-		border-left: 1px solid #dfce61;
-        list-style-type: none;
-		display: inline;
+    position: relative;
+    top: 15px;
+    margin-left: -7px;
+    padding: 5px 15px 10px 15px;
+    border-right: 1px solid #dfce61;
+    border-left: 1px solid #dfce61;
+    list-style-type: none;
+    display: inline;
 	}
 .header a:link{
-		color: #dfce61;
-		text-decoration: none;
+    color: #dfce61;
+    text-decoration: none;
 	}
 .header a:visited{
-		color: #dfce61;
-		text-decoration: none;
+    color: #dfce61;
+    text-decoration: none;
 	}
-        #nav{
-            display: none;
-            }
+#nav{
+    display: none;
+    }
 
 /* FOOTER */
 .footer{
     width: 100%;
     height: 50px;
-}
+    }
     
 /* STREAM */
 .live{
@@ -88,18 +88,18 @@ body {
     margin: 50px auto;
     border: 2px solid #dfce61;
     }
-    #stream{
-        position: relative;
-        float:left;
-        width: 830px;
-        height: 500px;
-        border-right: 10px solid #dfce61;
+#stream{
+    position: relative;
+    float:left;
+    width: 830px;
+    height: 500px;
+    border-right: 10px solid #dfce61;
     }
-    #chat{
-        position: relative;
-        float: right;
-        width: 300px;
-        height: 500px;
+#chat{
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 500px;
     }
     
 /* LATEST */
@@ -150,7 +150,7 @@ body {
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
-}
+    }
 .latest ul li h2 a:link{
     color: #dfce61;
     text-decoration: none;
@@ -191,33 +191,33 @@ body {
     width: 50%;
     max-width: 320px;
     }    
-     #latestimage{
-         position: relative;
-         float: left;
-         width: 100%;
-         height: 180px;
-         background-size: cover; 
-         background-position: 50% 50%;
-         background-repeat: no-repeat;
-	     overflow: hidden;
+#latestimage{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 180px;
+    background-size: cover; 
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
          }
-     #latestimage img{
-        position: absolute;
-        top: 55px;
-        left: 120px;
-        width: 75px;
-        }
-     #latestrating{
-         position: relative;
-         margin: 10px 10px 0 0;
-         padding: 0 10px 0 0;
-         height: 45px;
-         float: left;
-         color: #dfce61;
-         font-family: 'playball';
-         font-size: 2.5em;
-         border-right: 1px solid #dfce61;
-         }
+#latestimage img{
+    position: absolute; 
+    top: 55px;
+    left: 120px;
+    width: 75px;
+    }
+#latestrating{
+    position: relative;
+    margin: 10px 10px 0 0;
+    padding: 0 10px 0 0;
+    height: 45px;
+    float: left;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-right: 1px solid #dfce61;
+    }
     
 /* ARCHIVE */   
 .archive{
@@ -297,23 +297,23 @@ body {
     font-weight: 100;
     color: #A8A8A8;
     }
-     #archiveimage{
-         position: relative;
-         float: left;
-         width: 320px;
-         height: 180px;
-         margin: 0 10px 0 0;
-         background-size: cover; 
-         background-position: 50% 50%;
-         background-repeat: no-repeat;
-	     overflow: hidden;
-         }
-     #archiveimage img{
-        position: absolute;
-        top: 55px;
-        left: 120px;
-        width: 75px;
-        }
+#archiveimage{
+    position: relative;
+    float: left;
+    width: 320px;
+    height: 180px;
+    margin: 0 10px 0 0;
+    background-size: cover; 
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    }
+#archiveimage img{
+    position: absolute;
+    top: 55px;
+    left: 120px;
+    width: 75px;
+    }
 
 /* TWITTER FEED */    
 .twitter{
@@ -330,7 +330,7 @@ body {
     color: #dfce61;
     font-family: 'playball';
     font-size: 1.5em;
-}
+    }
 
 /* POSTHEAD */
 .posthead{
@@ -393,8 +393,8 @@ body {
     font-weight: 100;
     color: #A8A8A8;
     }
-    /* FIRST LETTER */
-    #firstletter{
+/* FIRST LETTER */
+#firstletter{
         position: relative;
         margin: -5px 15px -10px 0;
         float: left;
@@ -500,7 +500,7 @@ body {
     color: #dfce61;
     text-decoration: none;
     }
-    #contributor-list-image{
+#contributor-list-image{
         position: relative;
         width: 200px;
         height: 200px;
@@ -515,7 +515,7 @@ body {
 /*CONTRIBUTOR */
 .contributor{
     position: relative;
-    width: 65%;
+    width: 75%;
     height: 350px;
     margin: 0px auto;
     }
@@ -569,7 +569,7 @@ body {
     color: #fff;
     font-size: 1em;
     }
-    #contributorimage{
+#contributorimage{
         position: relative;
         float: left;
         width: 250px;
@@ -585,61 +585,55 @@ body {
 /* RECENT */
 .recent{
     position: relative;
-    width: 65%;
-    margin: 0px auto;
+    width: 75%;
+    min-width: 800px;
+    margin: 0 auto;
+    }
+.recent h1{
+    position: relative;
+    margin-bottom: -15px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recenttext{
+    position: relative;
+    left: 330px;
+    width: 59%;
+    margin: 0 0 10px 0;
     }
 .recent ul{
     position: relative;
-    width: 100%;
-    margin: 0 auto;
     padding: 0;
     list-style-type: none;
     }
 .recent ul li{
     position: relative;
     width: 100%;
-    height: 210px;
+    min-height: 190px;
     display:block;
-    margin: 0px auto;
     padding: 10px 0 0px 0; 
     border-bottom: 1px solid #dfce61;
     }
-.recent ul li img{
-    position: relative;
-	float: left;
-	width: 320px;
-	height: 200px;
-    margin: 0px 10px 0 0;
-    background-size: cover; 
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-	overflow: hidden;
+.recent ul li a:link{
+    text-decoration: none;
     }
-.recent h1{
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    color: #dfce61;
-    font-family: 'playball';
-    font-size: 2.5em;
-    border-bottom: 1px solid #dfce61;
+.recent ul li a:visited{
+    text-decoration: none;
     }
 .recent ul li h2{
     position: relative;
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
-    line-height: 1;
 }
 .recent ul li h2 a:link{
     color: #dfce61;
     text-decoration: none;
     }   
 .recent ul li h2 a:visited{
-    position: relative;
     color: #dfce61;
-    font-family: 'bien';
-    font-size: 1em;
     text-decoration: none;
     }
 .recent ul li h3{
@@ -658,55 +652,49 @@ body {
 .recent ul li h4 a:link{
     position: relative;
     color: #fff;
-    font-size: 1em;
-    font-weight: 100;
-    text-decoration: none;
     }   
 .recent ul li h4 a:visited{
     position: relative;
     color: #fff;
-    font-size: 1em;
-    text-decoration: none;
     }
 .recent ul li p{
     position: relative;
-    margin: 3px 0 0 0;
+    margin: 5px 0 0 0;
     font-weight: 100;
-    line-height: 1;
-    color: #A8A8A8
+    color: #A8A8A8;
+    }
+.recentimage{
+    position: absolute;
+    width: 50%;
+    max-width: 320px;
     }  
-    #recentimage{
-        position: relative;
-        float: left;
-        width: 320px;
-        height: 180px;
-        margin: 0px 10px 0 0;
-        background-size: cover; 
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-	    overflow: hidden;
-        }
-    #recentimage img{
-        position: absolute;
-        top: 55px;
-        left: 120px;
-        width: 75px;
-        height: 75px;
-        }
+#recentimage{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 180px;
+    background-size: cover; 
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    }
+#recentimage img{
+    position: absolute;
+    top: 55px;
+    left: 38%;
+    width: 75px;
+    }
     
 /* PAGINATOR */
 .paginator{
     position: relative;
-    width: 73%; 
     color: #dfce61;
     font-family: 'playball';
     font-size: 1.5em;
-    text-align: right;
     }
 .paginator ul{
     position: relative;
     margin: -10px 0 0 0;
-    float: right;
     }
 .paginator ul li{
     position: relative;
@@ -718,7 +706,7 @@ body {
 .paginator ul li a:visited{
     color: #dfce61;
     }
-
+    
 }
 
 @media (max-width: 1200px) and (min-width: 801px){
@@ -768,7 +756,7 @@ body {
 		color: #dfce61;
 		text-decoration: none;
 	}
-        #nav{
+#nav{
             display: none;
             }
 
@@ -888,8 +876,9 @@ body {
 .latestimage{
     position: absolute;
     width: 50%;
-    }    
-     #latestimage{
+    max-width: 320px;
+}
+#latestimage{
          position: relative;
          float: left;
          width: 100%;
@@ -899,13 +888,13 @@ body {
          background-repeat: no-repeat;
 	     overflow: hidden;
          }
-     #latestimage img{
+#latestimage img{
         position: absolute;
         top: 55px;
-        left: 120px;
+        left: 38%;
         width: 75px;
         }
-     #latestrating{
+#latestrating{
          position: relative;
          margin: 10px 10px 0 0;
          padding: 0 10px 0 0;
@@ -917,6 +906,7 @@ body {
          border-right: 1px solid #dfce61;
          }
 
+    
 /* ARCHIVE */   
 .archive{
     position: relative;
@@ -995,7 +985,7 @@ body {
     font-weight: 100;
     color: #A8A8A8;
     }
-     #archiveimage{
+#archiveimage{
          position: relative;
          float: left;
          width: 320px;
@@ -1006,7 +996,7 @@ body {
          background-repeat: no-repeat;
 	     overflow: hidden;
          }
-     #archiveimage img{
+#archiveimage img{
         position: absolute;
         top: 55px;
         left: 120px;
@@ -1091,8 +1081,8 @@ body {
     font-weight: 100;
     color: #A8A8A8;
     }
-    /* FIRST LETTER */
-    #firstletter{
+/* FIRST LETTER */
+#firstletter{
         position: relative;
         margin: -5px 15px -10px 0;
         float: left;
@@ -1198,7 +1188,7 @@ body {
     color: #dfce61;
     text-decoration: none;
     }
-    #contributor-list-image{
+#contributor-list-image{
         position: relative;
         width: 200px;
         height: 200px;
@@ -1213,7 +1203,8 @@ body {
 /*CONTRIBUTOR */
 .contributor{
     position: relative;
-    width: 65%;
+    width: 75%;
+    min-width: 800px;
     height: 350px;
     margin: 0px auto;
     }
@@ -1267,7 +1258,7 @@ body {
     color: #fff;
     font-size: 1em;
     }
-    #contributorimage{
+#contributorimage{
         position: relative;
         float: left;
         width: 250px;
@@ -1283,61 +1274,55 @@ body {
 /* RECENT */
 .recent{
     position: relative;
-    width: 65%;
-    margin: 0px auto;
+    width: 75%;
+    min-width: 800px;
+    margin: 0 auto;
+    }
+.recent h1{
+    position: relative;
+    margin-bottom: -15px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recenttext{
+    position: relative;
+    left: 330px;
+    width: 59%;
+    margin: 0 0 10px 0;
     }
 .recent ul{
     position: relative;
-    width: 100%;
-    margin: 0 auto;
     padding: 0;
     list-style-type: none;
     }
 .recent ul li{
     position: relative;
     width: 100%;
-    height: 210px;
+    min-height: 190px;
     display:block;
-    margin: 0px auto;
     padding: 10px 0 0px 0; 
     border-bottom: 1px solid #dfce61;
     }
-.recent ul li img{
-    position: relative;
-	float: left;
-	width: 320px;
-	height: 200px;
-    margin: 0px 10px 0 0;
-    background-size: cover; 
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-	overflow: hidden;
+.recent ul li a:link{
+    text-decoration: none;
     }
-.recent h1{
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    color: #dfce61;
-    font-family: 'playball';
-    font-size: 2.5em;
-    border-bottom: 1px solid #dfce61;
+.recent ul li a:visited{
+    text-decoration: none;
     }
 .recent ul li h2{
     position: relative;
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
-    line-height: 1;
 }
 .recent ul li h2 a:link{
     color: #dfce61;
     text-decoration: none;
     }   
 .recent ul li h2 a:visited{
-    position: relative;
     color: #dfce61;
-    font-family: 'bien';
-    font-size: 1em;
     text-decoration: none;
     }
 .recent ul li h3{
@@ -1356,55 +1341,49 @@ body {
 .recent ul li h4 a:link{
     position: relative;
     color: #fff;
-    font-size: 1em;
-    font-weight: 100;
-    text-decoration: none;
     }   
 .recent ul li h4 a:visited{
     position: relative;
     color: #fff;
-    font-size: 1em;
-    text-decoration: none;
     }
 .recent ul li p{
     position: relative;
-    margin: 3px 0 0 0;
+    margin: 5px 0 0 0;
     font-weight: 100;
-    line-height: 1;
-    color: #A8A8A8
+    color: #A8A8A8;
     }
-    #recentimage{
-        position: relative;
-        float: left;
-        width: 320px;
-        height: 180px;
-        margin: 0px 10px 0 0;
-        background-size: cover; 
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-	    overflow: hidden;
-        }
-    #recentimage img{
+.recentimage{
+    position: absolute;
+    width: 50%;
+    max-width: 320px;
+    }  
+#recentimage{
+         position: relative;
+         float: left;
+         width: 100%;
+         height: 180px;
+         background-size: cover; 
+         background-position: 50% 50%;
+         background-repeat: no-repeat;
+	     overflow: hidden;
+         }
+#recentimage img{
         position: absolute;
         top: 55px;
-        left: 120px;
+        left: 38%;
         width: 75px;
-        height: 75px;
         }
-
+    
 /* PAGINATOR */
 .paginator{
     position: relative;
-    width: 73%; 
     color: #dfce61;
     font-family: 'playball';
     font-size: 1.5em;
-    text-align: right;
     }
 .paginator ul{
     position: relative;
     margin: -10px 0 0 0;
-    float: right;
     }
 .paginator ul li{
     position: relative;
@@ -1458,37 +1437,37 @@ body {
 		color: #dfce61;
 		text-decoration: none;
 	}
-        #nav{
+#nav{
             position: absolute;
             top: -15px;
             left: 5px;
             list-style:none;
             width: 100px;
             }
-        #nav li{
+#nav li{
             position:relative;
             float:left;
             margin-right:10px;
             display: block;
             }
-        #nav li img{
+#nav li img{
             float: left;
             width: 70px;
             }
-        #nav a{
+#nav a{
             display: block;
             padding: 5px;
             color:#dfce61;
             background:#5a0606;
             text-decoration:none;
             }
-        #nav a:hover{
+#nav a:hover{
             color:#fff;
             background:#5a0606;
             text-decoration:underline;
             }
-        /* DROPDOWN */
-        #nav ul{
+/* DROPDOWN */
+#nav ul{
             position:absolute;
             left:-9999px;
             background-color:#5a0606;
@@ -1497,18 +1476,18 @@ body {
             border: 3px solid #dfce61;
             border-top: none;
             }
-        #nav li:hover ul{
+#nav li:hover ul{
             top: 66px;
             left: -40px;
             }
-        #nav li:hover a{
+#nav li:hover a{
             background:#5a0606;
             text-decoration:underline;
             }
-        #nav li:hover ul a{
+#nav li:hover ul a{
             text-decoration:none;
             }
-        #nav li:hover ul li a:hover{
+#nav li:hover ul li a:hover{
             background:#5a0606;
             }
     
@@ -1527,13 +1506,13 @@ body {
     margin: 50px auto;
     border: 2px solid #dfce61;
     }
-    #stream{
+#stream{
         position: relative;
         width: 100%;
         height: 370px;
         border-bottom: 10px solid #dfce61;
     }
-    #chat{
+#chat{
         position: relative;
         width: 100%;
         height: 370px;
@@ -1623,7 +1602,7 @@ body {
     margin: 5px 0 10px 0;
     color: #A8A8A8;
     }
-    #latestimage{
+#latestimage{
         position: relative;
         float: left;
         width: 100%;
@@ -1634,13 +1613,13 @@ body {
         background-repeat: no-repeat;
 	    overflow: hidden;
     }
-    #latestimage img{
+#latestimage img{
         position: absolute;
         top: 12px;
         left: 40%;
         width: 75px;
     }
-    #latestrating{
+#latestrating{
          position: relative;
          margin: 10px 10px 0 0;
          padding: 0 10px 0 0;
@@ -1736,7 +1715,7 @@ body {
     margin: 5px 0 10px 0;
     color: #A8A8A8;
     }
-    #archiveimage{
+#archiveimage{
         position: relative;
         float: left;
         width: 100%;
@@ -1747,7 +1726,7 @@ body {
         background-repeat: no-repeat;
 	    overflow: hidden;
     }
-    #archiveimage img{
+#archiveimage img{
         position: absolute;
         top: 12px;
         left: 40%;
@@ -1811,7 +1790,7 @@ body {
     text-decoration: none;
     }
 
-    /* POST */
+/* POST */
 .post{
     position: relative;
     width: 65%;
@@ -1822,8 +1801,8 @@ body {
     font-weight: 100;
     color: #A8A8A8;
     }
-    /* FIRST LETTER */
-    #firstletter{
+/* FIRST LETTER */
+#firstletter{
         position: relative;
         margin: -5px 15px -10px 0;
         float: left;
@@ -1930,7 +1909,7 @@ body {
     color: #dfce61;
     text-decoration: none;
     }
-    #contributor-list-image{
+#contributor-list-image{
         position: relative;
         width: 200px;
         height: 200px;
@@ -1945,7 +1924,8 @@ body {
 /*CONTRIBUTOR */
 .contributor{
     position: relative;
-    width: 65%;
+    width: 75%;
+    min-width: 350px;
     margin: 0px auto;
     }
 .contributor ul{
@@ -1962,7 +1942,7 @@ body {
     padding: 0px 0 0 0; 
     }
 .contributor h1{
-    margin: 0 0 50px 2px;
+    margin: 0 0 10px 2px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -1978,7 +1958,7 @@ body {
     }
 .contributor h3{
     position: relative;
-    margin: -10px 0 0 0;
+    margin: 10px 0 0 0;
     color: #BDBBAF;
     font-weight: 100;
     }
@@ -1990,20 +1970,16 @@ body {
 .contributor h4 a:link{
     position: relative;
     color: #fff;
-    font-size: 1em;
-    font-weight: 100;
     }   
 .contributor h4 a:visited{
     position: relative;
     color: #fff;
-    font-size: 1em;
     }
-    #contributorimage{
+#contributorimage{
         position: relative;
-        float: left;
         width: 250px;
         height: 250px;
-        margin: 0px 10px 0 0;
+        margin: 0px auto;
         border: 1px solid #dfce61;
         background-size: cover; 
         background-position: 50% 50%;
@@ -2014,8 +1990,22 @@ body {
 /* RECENT */
 .recent{
     position: relative;
-    width: 65%;
+    width: 75%;
+    min-width: 350px;
     margin: 0px auto;
+    }
+.recent h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recenttext{
+    position: relative;
+    margin: 0 0 10px 0;
     }
 .recent ul{
     position: relative;
@@ -2030,15 +2020,6 @@ body {
     display:block;
     margin: 0px auto;
     padding: 10px 0 0px 0; 
-    border-bottom: 1px solid #dfce61;
-    }
-.recent h1{
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    color: #dfce61;
-    font-family: 'playball';
-    font-size: 2.5em;
     border-bottom: 1px solid #dfce61;
     }
 .recent ul li h2{
@@ -2092,7 +2073,8 @@ body {
     line-height: 1;
     color: #A8A8A8
     }
-    #recentimage{
+.recentimage{}
+#recentimage{
         position: relative;
         width: 100%;
         height: 100px;
@@ -2102,7 +2084,7 @@ body {
         background-repeat: no-repeat;
 	   overflow: hidden;
     }
-    #recentimage img{
+#recentimage img{
         position: absolute;
         top: 12px;
         left: 40%;
@@ -2112,16 +2094,13 @@ body {
 /* PAGINATOR */
 .paginator{
     position: relative;
-    width: 100%; 
     color: #dfce61;
     font-family: 'playball';
     font-size: 1.5em;
-    text-align: right;
     }
 .paginator ul{
     position: relative;
-    margin: 10px 0 0 0;
-    float: right;
+    margin: 5px 0 0 0;
     }
 .paginator ul li{
     position: relative;
@@ -2175,37 +2154,37 @@ body {
 		color: #dfce61;
 		text-decoration: none;
 	}
-        #nav{
+#nav{
             position: absolute;
             top: -15px;
             left: 5px;
             list-style:none;
             width: 100px;
             }
-        #nav li{
+#nav li{
             position:relative;
             float:left;
             margin-right:10px;
             display: block;
             }
-        #nav li img{
+#nav li img{
             float: left;
             width: 70px;
             }
-        #nav a{
+#nav a{
             display: block;
             padding: 5px;
             color:#dfce61;
             background:#5a0606;
             text-decoration:none;
             }
-        #nav a:hover{
+#nav a:hover{
             color:#fff;
             background:#5a0606;
             text-decoration:underline;
             }
-        /* DROPDOWN */
-        #nav ul{
+/* DROPDOWN */
+#nav ul{
             position:absolute;
             left:-9999px;
             background-color:#5a0606;
@@ -2214,18 +2193,18 @@ body {
             border: 3px solid #dfce61;
             border-top: none;
             }
-        #nav li:hover ul{
+#nav li:hover ul{
             top: 66px;
             left: -40px;
             }
-        #nav li:hover a{
+#nav li:hover a{
             background:#5a0606;
             text-decoration:underline;
             }
-        #nav li:hover ul a{
+#nav li:hover ul a{
             text-decoration:none;
             }
-        #nav li:hover ul li a:hover{
+#nav li:hover ul li a:hover{
             background:#5a0606;
             }
 
@@ -2244,12 +2223,12 @@ body {
     margin: 50px auto 40px auto;
     border: 2px solid #dfce61;
     }
-    #stream{
+#stream{
         position: relative;
         width: 100%;
         height: 225px
     }
-    #chat{
+#chat{
         position: relative;
         display: none;
     }
@@ -2339,7 +2318,7 @@ body {
     margin: 5px 0 10px 0;
     color: #A8A8A8;
     }
-    #latestimage{
+#latestimage{
         position: relative;
         float: left;
         width: 100%;
@@ -2350,13 +2329,13 @@ body {
         background-repeat: no-repeat;
 	    overflow: hidden;
     }
-    #latestimage img{
+#latestimage img{
         position: absolute;
         top: 12px;
         left: 40%;
         width: 75px;
     }
-    #latestrating{
+#latestrating{
          position: relative;
          margin: 10px 10px 0 0;
          padding: 0 10px 0 0;
@@ -2452,7 +2431,7 @@ body {
     margin: 5px 0 10px 0;
     color: #A8A8A8;
     }
-    #archiveimage{
+#archiveimage{
         position: relative;
         float: left;
         width: 100%;
@@ -2463,7 +2442,7 @@ body {
         background-repeat: no-repeat;
 	    overflow: hidden;
     }
-    #archiveimage img{
+#archiveimage img{
         position: absolute;
         top: 12px;
         left: 40%;
@@ -2527,7 +2506,7 @@ body {
     text-decoration: none;
     }
 
-    /* POST */
+/* POST */
 .post{
     position: relative;
     width: 65%;
@@ -2538,8 +2517,8 @@ body {
     font-weight: 100;
     color: #A8A8A8;
     }
-    /* FIRST LETTER */
-    #firstletter{
+/* FIRST LETTER */
+#firstletter{
         position: relative;
         margin: -5px 15px -10px 0;
         float: left;
@@ -2646,7 +2625,7 @@ body {
     color: #dfce61;
     text-decoration: none;
     }
-    #contributor-list-image{
+#contributor-list-image{
         position: relative;
         width: 200px;
         height: 200px;
@@ -2661,7 +2640,8 @@ body {
 /*CONTRIBUTOR */
 .contributor{
     position: relative;
-    width: 65%;
+    width: 75%;
+    min-width: 350px;
     margin: 0px auto;
     }
 .contributor ul{
@@ -2678,7 +2658,7 @@ body {
     padding: 0px 0 0 0; 
     }
 .contributor h1{
-    margin: 0 0 50px 2px;
+    margin: 0 0 10px 2px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -2694,7 +2674,7 @@ body {
     }
 .contributor h3{
     position: relative;
-    margin: -10px 0 0 0;
+    margin: 10px 0 0 0;
     color: #BDBBAF;
     font-weight: 100;
     }
@@ -2711,12 +2691,11 @@ body {
     position: relative;
     color: #fff;
     }
-    #contributorimage{
+#contributorimage{
         position: relative;
-        float: left;
         width: 250px;
         height: 250px;
-        margin: 0px 10px 0 0;
+        margin: 0px auto;
         border: 1px solid #dfce61;
         background-size: cover; 
         background-position: 50% 50%;
@@ -2727,8 +2706,22 @@ body {
 /* RECENT */
 .recent{
     position: relative;
-    width: 65%;
+    width: 75%;
+    min-width: 350px;
     margin: 0px auto;
+    }
+.recent h1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 2.5em;
+    border-bottom: 1px solid #dfce61;
+    }
+.recenttext{
+    position: relative;
+    margin: 0 0 10px 0;
     }
 .recent ul{
     position: relative;
@@ -2743,15 +2736,6 @@ body {
     display:block;
     margin: 0px auto;
     padding: 10px 0 0px 0; 
-    border-bottom: 1px solid #dfce61;
-    }
-.recent h1{
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    color: #dfce61;
-    font-family: 'playball';
-    font-size: 2.5em;
     border-bottom: 1px solid #dfce61;
     }
 .recent ul li h2{
@@ -2805,7 +2789,8 @@ body {
     line-height: 1;
     color: #A8A8A8
     }
-    #recentimage{
+.recentimage{}
+#recentimage{
         position: relative;
         width: 100%;
         height: 100px;
@@ -2815,7 +2800,7 @@ body {
         background-repeat: no-repeat;
 	   overflow: hidden;
     }
-    #recentimage img{
+#recentimage img{
         position: absolute;
         top: 12px;
         left: 40%;
@@ -2825,16 +2810,13 @@ body {
 /* PAGINATOR */
 .paginator{
     position: relative;
-    width: 100%; 
     color: #dfce61;
     font-family: 'playball';
     font-size: 1.5em;
-    text-align: right;
     }
 .paginator ul{
     position: relative;
-    margin: 10px 0 0 0;
-    float: right;
+    margin: 5px 0 0 0;
     }
 .paginator ul li{
     position: relative;
@@ -2842,11 +2824,9 @@ body {
     }
 .paginator ul li a:link{
     color: #dfce61;
-    text-decoration: none;
     }
 .paginator ul li a:visited{
     color: #dfce61;
-    text-decoration: none;
     }
     
-`}
+}

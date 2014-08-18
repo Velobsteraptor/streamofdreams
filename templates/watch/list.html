@@ -18,7 +18,7 @@
 {% block title %}{% parent %} - Watch{% endblock %}
 
 {% block content %}
-<div class="latest">
+<div class="archive">
 <h1>Watch</h1>
     {% set data = get('videos') %}
     {% set data = data|sort('publish_date', true) %}
@@ -27,7 +27,7 @@
         {% for object in data %}
             <li>
                 <a href="{{ url(object) }}">
-                <div id="latestimage" style=
+                <div id="archiveimage" style=
                      "background-image:url({{ object.url.thumbnail_url}});">
                     <img src="../../static/images/btn_playvideo.png">
                 </div>
@@ -56,6 +56,6 @@
             </li>
         {% endfor %}
     </ul>
-</div>
 {% include "templates/partials/paginator.html" %}
+</div>
 {% endblock %}
