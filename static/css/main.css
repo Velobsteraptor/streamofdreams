@@ -25,6 +25,7 @@
 body {
     background-color: #1A1E21;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing: 0.5px;
     }
     
 /* HEADER */
@@ -32,7 +33,7 @@ body {
 	position: relative;
 	width:100%;
 	height: 70px;
-    margin: -20px 0 50px 0;
+    margin: -20px 0 0px 0;
     padding: 0px;
 	background-color:#5a0606;
 	border-bottom: 3px solid #dfce61;
@@ -131,6 +132,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.latest ul a:link{
+    text-decoration: none;
+    }
+.latest ul a:visited{
+    text-decoration: none;
+    }
 .latest ul li{
     position: relative;
     width: 100%;
@@ -139,25 +146,11 @@ body {
     padding: 10px 0 2px 0; 
     border-bottom: 1px solid #dfce61;
     }
-.latest ul li a:link{
-    text-decoration: none;
-    }
-.latest ul li a:visited{
-    text-decoration: none;
-    }
 .latest ul li h2{
     position: relative;
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
-    }
-.latest ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.latest ul li h2 a:visited{
-    color: #dfce61;
-    text-decoration: none;
     }
 .latest ul li h3{
     position: relative;
@@ -172,14 +165,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.latest ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    }   
-.latest ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    }
 .latest ul li p{
     position: relative;
     margin: 5px 0 0 0;
@@ -242,6 +227,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.archive ul a:link{
+    text-decoration: none;
+    }
+.archive ul a:visited{
+    text-decoration: none;
+    }
 .archive ul li{
     position: relative;
     width: 100%;
@@ -250,26 +241,12 @@ body {
     padding: 10px 0 2px 0; 
     border-bottom: 1px solid #dfce61;
     }
-.archive ul li a:link{
-    text-decoration: none;
-    }
-.archive ul li a:visited{
-    text-decoration: none;
-    }
 .archive ul li h2{
     position: relative;
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
 }
-.archive ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.archive ul li h2 a:visited{
-    color: #dfce61;
-    text-decoration: none;
-    }
 .archive ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -283,14 +260,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.archive ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    }   
-.archive ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    }
 .archive ul li p{
     position: relative;
     margin: 5px 0 0 0;
@@ -332,34 +301,45 @@ body {
     font-size: 1.5em;
     }
 
+/* POSTHEAD IMAGE*/
+.posthead_image{
+    position: relative;
+    width:100%;
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#postheadimage_gradient{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(26, 30, 33, .1), rgba(26, 30, 33, .3), rgba(26, 30, 33, .5), rgba(26, 30, 33, .7), rgba(26, 30, 33, .9), #1A1E21, #1A1E21);
+}
+    
 /* POSTHEAD */
 .posthead{
     position: relative;
     width: 65%;
-    margin: 50px auto;
+    margin: -100px auto 0;
     border-bottom: 2px solid #dfce61;
-    }
-.posthead img{
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
     }
 .posthead h1{
     position: relative;
-    margin: -20px 0 -20px 0;
-    border: none;
+    margin: 0px auto;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
     }
 .posthead h2{
+    position: relative;
     color: #BDBBAF;
+    margin: 0px auto;
     font-weight: 100;
     }
 .posthead h3{
     position: relative;
-    float: right;
-    margin: -20px 0 -20px 0;
     border: none;
     color: #dfce61;
     font-family: 'playball';
@@ -367,7 +347,8 @@ body {
     }
 .posthead h4{
     position: relative;
-    margin: -10px 0 10px 0;
+    margin: 5px auto;
+    margin-bottom: 10px;
     color: #fff;
     font-size: .75em;
     font-weight: 100;
@@ -382,6 +363,14 @@ body {
     color: #fff;
     text-decoration: none;
     }
+#postheadrating{
+    position: relative;
+    float: right;    
+    margin-left: 15px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 5em;
+}
 
 /* POST */
 .post{
@@ -396,7 +385,7 @@ body {
 /* FIRST LETTER */
 #firstletter{
         position: relative;
-        margin: -5px 15px -10px 0;
+        margin: -5px 20px -10px 0;
         float: left;
         color: #dfce61;
         font-family: 'playball';
@@ -460,7 +449,7 @@ body {
 /* CONTRIBUTOR LIST */
 .contributor-list{
     position: relative;
-    width: 65%;
+    width: 75%;
     margin: 0px auto;
     }
 .contributor-list ul{
@@ -477,7 +466,8 @@ body {
     display: inline-block;
     }
 .contributor-list h1{
-    margin: 0 0 50px 2px;
+    position: relative;
+    margin-bottom: 10px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -530,10 +520,11 @@ body {
     position: relative;
     display:block;
     margin: 0px auto;
-    padding: 0px 0 0 0; 
+    padding: 0; 
     }
 .contributor h1{
-    margin: 0 0 50px 2px;
+    position: relative;
+    margin-bottom: 20px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -712,13 +703,14 @@ body {
 @media (max-width: 1200px) and (min-width: 801px){
 body {
     background-color: #1A1E21;
-}   
+} 
+    
 /* HEADER */
 .header{
 	position: relative;
 	width:100%;
 	height: 70px;
-    margin: -20px 0 50px 0;
+    margin: -20px 0 0px 0;
     padding: 0px;
 	background-color:#5a0606;
 	border-bottom: 3px solid #dfce61;
@@ -818,6 +810,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.latest ul a:link{
+    text-decoration: none;
+    }
+.latest ul a:visited{
+    text-decoration: none;
+    }
 .latest ul li{
     position: relative;
     width: 100%;
@@ -826,26 +824,12 @@ body {
     padding: 10px 0 2px 0; 
     border-bottom: 1px solid #dfce61;
     }
-.latest ul li a:link{
-    text-decoration: none;
-    }
-.latest ul li a:visited{
-    text-decoration: none;
-    }
 .latest ul li h2{
     position: relative;
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
 }
-.latest ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.latest ul li h2 a:visited{
-    color: #dfce61;
-    text-decoration: none;
-    }
 .latest ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -859,14 +843,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.latest ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    }   
-.latest ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    }
 .latest ul li p{
     position: relative;
     margin: 5px 0 0 0;
@@ -930,6 +906,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.archive ul a:link{
+    text-decoration: none;
+    }
+.archive ul a:visited{
+    text-decoration: none;
+    }
 .archive ul li{
     position: relative;
     width: 100%;
@@ -938,26 +920,12 @@ body {
     padding: 10px 0 2px 0; 
     border-bottom: 1px solid #dfce61;
     }
-.archive ul li a:link{
-    text-decoration: none;
-    }
-.archive ul li a:visited{
-    text-decoration: none;
-    }
 .archive ul li h2{
     position: relative;
     color: #dfce61;
     margin: 0 0 0 0;
     font-family: 'bien';
 }
-.archive ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.archive ul li h2 a:visited{
-    color: #dfce61;
-    text-decoration: none;
-    }
 .archive ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -971,14 +939,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.archive ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    }   
-.archive ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    }
 .archive ul li p{
     position: relative;
     margin: 5px 0 0 0;
@@ -1020,34 +980,45 @@ body {
     font-size: 1.5em;
 }
     
-/* POSTHEAD */    
+/* POSTHEAD IMAGE*/
+.posthead_image{
+    position: relative;
+    width:100%;
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#postheadimage_gradient{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(26, 30, 33, .1), rgba(26, 30, 33, .3), rgba(26, 30, 33, .5), rgba(26, 30, 33, .7), rgba(26, 30, 33, .9), #1A1E21, #1A1E21);
+}
+    
+/* POSTHEAD */
 .posthead{
     position: relative;
     width: 65%;
-    margin: 50px auto;
+    margin: -100px auto 0;
     border-bottom: 2px solid #dfce61;
-    }
-.posthead img{
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
     }
 .posthead h1{
     position: relative;
-    margin: -20px 0 -20px 0;
-    border: none;
+    margin: 0px auto;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
     }
 .posthead h2{
+    position: relative;
     color: #BDBBAF;
+    margin: 0px auto;
     font-weight: 100;
     }
 .posthead h3{
     position: relative;
-    float: right;
-    margin: -20px 0 -20px 0;
     border: none;
     color: #dfce61;
     font-family: 'playball';
@@ -1055,7 +1026,8 @@ body {
     }
 .posthead h4{
     position: relative;
-    margin: -10px 0 10px 0;
+    margin: 5px auto;
+    margin-bottom: 10px;
     color: #fff;
     font-size: .75em;
     font-weight: 100;
@@ -1070,7 +1042,15 @@ body {
     color: #fff;
     text-decoration: none;
     }
-
+#postheadrating{
+    position: relative;
+    float: right;    
+    margin-left: 15px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 5em;
+}
+    
 /* POST */
 .post{
     position: relative;
@@ -1084,7 +1064,7 @@ body {
 /* FIRST LETTER */
 #firstletter{
         position: relative;
-        margin: -5px 15px -10px 0;
+        margin: -5px 20px -10px 0;
         float: left;
         color: #dfce61;
         font-family: 'playball';
@@ -1148,7 +1128,7 @@ body {
 /* CONTRIBUTOR LIST */
 .contributor-list{
     position: relative;
-    width: 65%;
+    width: 75%;
     margin: 0px auto;
     }
 .contributor-list ul{
@@ -1165,7 +1145,8 @@ body {
     display: inline-block;
     }
 .contributor-list h1{
-    margin: 0 0 50px 2px;
+    position: relative;
+    margin-bottom: 10px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -1204,7 +1185,6 @@ body {
 .contributor{
     position: relative;
     width: 75%;
-    min-width: 800px;
     height: 350px;
     margin: 0px auto;
     }
@@ -1219,10 +1199,11 @@ body {
     position: relative;
     display:block;
     margin: 0px auto;
-    padding: 0px 0 0 0; 
+    padding: 0; 
     }
 .contributor h1{
-    margin: 0 0 50px 2px;
+    position: relative;
+    margin-bottom: 20px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -1408,7 +1389,7 @@ body {
 	position: relative;
 	width:100%;
 	height: 70px;
-    margin: -20px 0 50px 0;
+    margin: -20px 0 0px 0;
     padding: 0px;
 	background-color:#5a0606;
 	border-bottom: 3px solid #dfce61;
@@ -1541,6 +1522,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.latest ul a:link{
+    text-decoration: none;
+    }
+.latest ul a:visited{
+    text-decoration: none;
+    }
 .latest ul li{
     position: relative;
     width: 100%;
@@ -1549,12 +1536,6 @@ body {
     padding: 10px 0 0 0; 
     border-bottom: 1px solid #dfce61;
     }
-.latest ul li a:link{
-    text-decoration: none;
-    }
-.latest ul li a:visited{
-    text-decoration: none;
-    }
 .latest ul li h2{
     position: relative;
     color: #dfce61;
@@ -1562,17 +1543,6 @@ body {
     font-family: 'bien';
     line-height: 1;
 }
-.latest ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.latest ul li h2 a:visited{
-    position: relative;
-    color: #dfce61;
-    font-family: 'bien';
-    font-size: 1em;
-    text-decoration: none;
-    }
 .latest ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -1586,17 +1556,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.latest ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 100;
-    }   
-.latest ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    }
 .latest ul li p{
     font-weight: 100;
     margin: 5px 0 10px 0;
@@ -1640,8 +1599,7 @@ body {
     }
 .archive h1{
     position: relative;
-    width: 100%;
-    margin: 0 auto;
+    margin-bottom: 0px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -1654,6 +1612,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.archive ul a:link{
+    text-decoration: none;
+    }
+.archive ul a:visited{
+    text-decoration: none;
+    }
 .archive ul li{
     position: relative;
     width: 100%;
@@ -1662,12 +1626,6 @@ body {
     padding: 10px 0 0 0; 
     border-bottom: 1px solid #dfce61;
     }
-.archive ul li a:link{
-    text-decoration: none;
-    }
-.archive ul li a:visited{
-    text-decoration: none;
-    }
 .archive ul li h2{
     position: relative;
     color: #dfce61;
@@ -1675,17 +1633,6 @@ body {
     font-family: 'bien';
     line-height: 1;
 }
-.archive ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.archive ul li h2 a:visited{
-    position: relative;
-    color: #dfce61;
-    font-family: 'bien';
-    font-size: 1em;
-    text-decoration: none;
-    }
 .archive ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -1699,17 +1646,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.archive ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 100;
-    }   
-.archive ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    }
 .archive ul li p{
     font-weight: 100;
     margin: 5px 0 10px 0;
@@ -1738,35 +1674,46 @@ body {
     display: none;
     } 
 
+/* POSTHEAD IMAGE*/
+.posthead_image{
+    position: relative;
+    width:100%;
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#postheadimage_gradient{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(26, 30, 33, .1), rgba(26, 30, 33, .3), rgba(26, 30, 33, .5), rgba(26, 30, 33, .7), rgba(26, 30, 33, .9), #1A1E21, #1A1E21);
+}
+    
 /* POSTHEAD */
 .posthead{
     position: relative;
     width: 65%;
     min-width: 350px;
-    margin: 50px auto;
+    margin: -100px auto 0;
     border-bottom: 2px solid #dfce61;
-    }
-.posthead img{
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
     }
 .posthead h1{
     position: relative;
-    margin: -20px 0 -20px 0;
-    border: none;
+    margin: 0px auto;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
     }
 .posthead h2{
+    position: relative;
     color: #BDBBAF;
+    margin: 0px auto;
     font-weight: 100;
     }
 .posthead h3{
     position: relative;
-    float: right;
-    margin: -20px 0 -20px 0;
     border: none;
     color: #dfce61;
     font-family: 'playball';
@@ -1774,7 +1721,8 @@ body {
     }
 .posthead h4{
     position: relative;
-    margin: -10px 0 10px 0;
+    margin: 5px auto;
+    margin-bottom: 10px;
     color: #fff;
     font-size: .75em;
     font-weight: 100;
@@ -1789,7 +1737,15 @@ body {
     color: #fff;
     text-decoration: none;
     }
-
+#postheadrating{
+    position: relative;
+    float: right;
+    margin-left: 15px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 3em;
+}
+    
 /* POST */
 .post{
     position: relative;
@@ -1804,7 +1760,7 @@ body {
 /* FIRST LETTER */
 #firstletter{
         position: relative;
-        margin: -5px 15px -10px 0;
+        margin: -5px 20px -10px 0;
         float: left;
         color: #dfce61;
         font-family: 'playball';
@@ -1886,7 +1842,8 @@ body {
     margin: 0 auto;
     }
 .contributor-list h1{
-    margin: 0 0 50px 2px;
+    position: relative;
+    margin-bottom: 10px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -2125,7 +2082,7 @@ body {
 	position: relative;
 	width:100%;
 	height: 70px;
-    margin: -20px 0 50px 0;
+    margin: -20px 0 0px 0;
     padding: 0px;
 	background-color:#5a0606;
 	border-bottom: 3px solid #dfce61;
@@ -2256,6 +2213,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.latest ul a:link{
+    text-decoration: none;
+    }
+.latest ul a:visited{
+    text-decoration: none;
+    }
 .latest ul li{
     position: relative;
     width: 100%;
@@ -2263,12 +2226,6 @@ body {
     margin: 0px auto;
     padding: 10px 0 0 0; 
     border-bottom: 1px solid #dfce61;
-    }
-.latest ul li a:link{
-    text-decoration: none;
-    }
-.latest ul li a:visited{
-    text-decoration: none;
     }
 .latest ul li h1{
     position: relative;
@@ -2281,17 +2238,6 @@ body {
     font-family: 'bien';
     line-height: 1;
 }
-.latest ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.latest ul li h2 a:visited{
-    position: relative;
-    color: #dfce61;
-    font-family: 'bien';
-    font-size: 1em;
-    text-decoration: none;
-    }
 .latest ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -2305,14 +2251,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.latest ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    }   
-.latest ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    }
 .latest ul li p{
     font-weight: 100;
     margin: 5px 0 10px 0;
@@ -2356,8 +2294,7 @@ body {
     }
 .archive h1{
     position: relative;
-    width: 100%;
-    margin: 0 auto;
+    margin-bottom: 0px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
@@ -2370,6 +2307,12 @@ body {
     padding: 0;
     list-style-type: none;
     }
+.archive ul a:link{
+    text-decoration: none;
+    }
+.archive ul a:visited{
+    text-decoration: none;
+    }
 .archive ul li{
     position: relative;
     width: 100%;
@@ -2378,12 +2321,6 @@ body {
     padding: 10px 0 0 0; 
     border-bottom: 1px solid #dfce61;
     }
-.archive ul li a:link{
-    text-decoration: none;
-    }
-.archive ul li a:visited{
-    text-decoration: none;
-    }
 .archive ul li h2{
     position: relative;
     color: #dfce61;
@@ -2391,17 +2328,6 @@ body {
     font-family: 'bien';
     line-height: 1;
 }
-.archive ul li h2 a:link{
-    color: #dfce61;
-    text-decoration: none;
-    }   
-.archive ul li h2 a:visited{
-    position: relative;
-    color: #dfce61;
-    font-family: 'bien';
-    font-size: 1em;
-    text-decoration: none;
-    }
 .archive ul li h3{
     position: relative;
     margin: 5px 0 0 0;
@@ -2415,17 +2341,6 @@ body {
     font-size: .75em;
     font-weight: 100;
 }
-.archive ul li h4 a:link{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    font-weight: 100;
-    }   
-.archive ul li h4 a:visited{
-    position: relative;
-    color: #fff;
-    font-size: 1em;
-    }
 .archive ul li p{
     font-weight: 100;
     margin: 5px 0 10px 0;
@@ -2454,35 +2369,46 @@ body {
     display: none;
     } 
 
+/* POSTHEAD IMAGE*/
+.posthead_image{
+    position: relative;
+    width:100%;
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#postheadimage_gradient{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(26, 30, 33, .1), rgba(26, 30, 33, .3), rgba(26, 30, 33, .5), rgba(26, 30, 33, .7), rgba(26, 30, 33, .9), #1A1E21, #1A1E21);
+}
+    
 /* POSTHEAD */
 .posthead{
     position: relative;
     width: 65%;
     min-width: 350px;
-    margin: 50px auto;
+    margin: -100px auto 0;
     border-bottom: 2px solid #dfce61;
-    }
-.posthead img{
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
     }
 .posthead h1{
     position: relative;
-    margin: -20px 0 -20px 0;
-    border: none;
+    margin: 0px auto;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;
     }
 .posthead h2{
+    position: relative;
     color: #BDBBAF;
+    margin: 0px auto;
     font-weight: 100;
     }
 .posthead h3{
     position: relative;
-    float: right;
-    margin: -20px 0 -20px 0;
     border: none;
     color: #dfce61;
     font-family: 'playball';
@@ -2490,7 +2416,8 @@ body {
     }
 .posthead h4{
     position: relative;
-    margin: -10px 0 10px 0;
+    margin: 5px auto;
+    margin-bottom: 10px;
     color: #fff;
     font-size: .75em;
     font-weight: 100;
@@ -2505,6 +2432,14 @@ body {
     color: #fff;
     text-decoration: none;
     }
+#postheadrating{
+    position: relative;
+    float: right;    
+    margin-left: 15px;
+    color: #dfce61;
+    font-family: 'playball';
+    font-size: 3em;
+}
 
 /* POST */
 .post{
@@ -2520,7 +2455,7 @@ body {
 /* FIRST LETTER */
 #firstletter{
         position: relative;
-        margin: -5px 15px -10px 0;
+        margin: -5px 20px -10px 0;
         float: left;
         color: #dfce61;
         font-family: 'playball';
@@ -2602,7 +2537,8 @@ body {
     margin: 0 auto;
     }
 .contributor-list h1{
-    margin: 0 0 50px 2px;
+    position: relative;
+    margin-bottom: 10px;
     color: #dfce61;
     font-family: 'playball';
     font-size: 2.5em;

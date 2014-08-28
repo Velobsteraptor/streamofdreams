@@ -25,22 +25,19 @@
     {% set data = paginate(data, 5) %}
     <ul>
         {% for object in data %}
+        <a href="{{ url(object) }}">
             <li>
-                <a href="{{ url(object) }}">
                     <div id="archiveimage" style=
                      "background-image:url({{ object.image.url}});">
                     </div>
                 <h2>
-                    {{ object.name }}</a>
+                    {{ object.name }}
                 </h2>
                 <h3>
                     {{ object.tag }}
                 </h3>
-                </a>
                 <h4>
-                    {% if object.author %}
-                        <a href="{{ url(object.author) }}">{{ object.author.name }}</a>
-                    {% endif %}
+                    {{ object.author.name }}
                     | {{ object.publish_date|date('F d Y') }}
                 </h4>
                 {% if object.rating %}
@@ -52,6 +49,7 @@
                     {{ object.description }}
                 </p>
             </li>
+        </a>
         {% endfor %}
     </ul>
 {% include "templates/partials/paginator.html" %}

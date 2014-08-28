@@ -25,24 +25,24 @@
     {% set data = paginate(data, 5) %}
     <ul>
         {% for object in data %}
+        <a href="{{ url(object) }}">
             <li>
-                <a href="{{ url(object) }}">
                 <div id="archiveimage" style=
                      "background-image:url({{ object.url.thumbnail_url}});">
                     <img src="../../static/images/btn_playvideo.png">
                 </div>
                 <h2>
-                    {{ object.name }}</a>
+                    {{ object.name }}
                 </h2>
                 <h3>
                     {{ object.tag }}
                 </h3>
                 <h4>
                     {% if object.host %}
-                        <a href="{{ url(object.host) }}">{{ object.host.name }}</a>
+                        {{ object.host.name }}
                     {% endif %}
                     {% if object.cohost %}
-                        and <a href="{{ url(object.cohost) }}">{{ object.cohost.name }}</a>
+                        and {{ object.cohost.name }}
                     {% endif %}
                     {% if object.guest %}
                         with {{ object.guest.first }} {{ object.guest.last }}
@@ -56,6 +56,7 @@
                     {{ object.description }}
                 </p>
             </li>
+        </a>
         {% endfor %}
     </ul>
 {% include "templates/partials/paginator.html" %}

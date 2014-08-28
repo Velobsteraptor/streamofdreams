@@ -29,7 +29,7 @@
 <div class="latest">
     <div class="twitter">
         <h1>Contributor Tweets</h1>
-        <a class="twitter-timeline" href="https://twitter.com/VideoGameBubbos/lists/stream-of-dream-tweets" data-widget-id="499423274078449664" data-chrome="noheader nofooter transparent" data-tweet-limit="5" width="100%">Tweets from https://twitter.com/VideoGameBubbos/lists/stream-of-dream-tweets</a>
+        <a class="twitter-timeline" href="https://twitter.com/VideoGameBubbos/lists/contributor-tweets" data-widget-id="499423274078449664" data-chrome="noheader nofooter transparent" data-tweet-limit="5" width="100%">Tweets from https://twitter.com/VideoGameBubbos/lists/contributor-tweets</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>    
     {% set data = get('articles','reviews','videos') %}
@@ -38,8 +38,8 @@
 <h1>Latest</h1>
     <ul>
         {% for object in data %}
+        <a href="{{ url(object) }}">
             <li>
-                <a href="{{ url(object) }}">
                 <div class="latestimage">
                     <div id="latestimage" style=
                      "background-image:url({{ object.image.url }}), url({{ object.url.thumbnail_url }});">
@@ -50,17 +50,17 @@
                 </div>
                 <div class="latesttext">
                 <h2>
-                    {{ object.name }}</a>
+                    {{ object.name }}
                 </h2>
                 <h3>
                     {{ object.tag }}
                 </h3>
                 <h4>
                     {% if object.host %}
-                        <a href="{{ url(object.host) }}">{{ object.host.name }}</a>
+                        {{ object.host.name }}
                     {% endif %}
                     {% if object.cohost %}
-                        and <a href="{{ url(object.cohost) }}">{{ object.cohost.name }}</a>
+                        and {{ object.cohost.name }}
                     {% endif %}
                     {% if object.guest %}
                         with {{ object.guest.first }} {{ object.guest.last }}
@@ -69,7 +69,7 @@
                         and {{ object.guest_2.first }} {{ object.guest_2.last }}
                     {% endif %}
                     {% if object.author %}
-                        <a href="{{ url(object.author) }}">{{ object.author.name }}</a>
+                        {{ object.author.name }}
                     {% endif %} 
                     | {{ object.publish_date|date('F d Y') }}
                 </h4>
@@ -83,6 +83,7 @@
                 </p>
                 </div>
             </li>
+        </a>
         {% endfor %}
     </ul>
     {% include "templates/partials/paginator.html" %}
