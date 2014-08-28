@@ -16,19 +16,17 @@
     <h1>{{ item.name }}</h1>
     <p>{{ item.description }}</p>
     <h4>
-        {% for relation in getItems(item.host) %}
-            <a href="{{ url(relation) }}">{{ relation.name }}</a>
-            {% if not loop.last %},{% endif %}
-        {% endfor %} 
-        {% for relation in getItems(item.cohost) %}
-            and <a href="{{ url(relation) }}">{{ relation.name }}</a>
-            {% if not loop.last %},{% endif %}
-        {% endfor %} 
+        {% if item.host %}
+            <a href="{{ url(item.host) }}">{{ item.host.name }}</a>
+        {% endif %}
+        {% if item.cohost %}
+            and <a href="{{ url(item.cohost) }}">{{ item.cohost.name }}</a>
+        {% endif %}
         {% if item.guest %}
-         with {{ item.guest.firstname }} {{ item.guest.lastname }}
+            with {{ item.guest.first }} {{ item.guest.last }}
         {% endif %}
         {% if item.guest_2 %}
-         and {{ item.guest_2.firstname }} {{ item.guest@.lastname }}
+            and {{ item.guest_2.first }} {{ item.guest_2.last }}
         {% endif %}
         | {{ item.publish_date|date('F d Y') }}
     </h4>

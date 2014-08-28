@@ -17,7 +17,6 @@ var slug = require('uslug');
 var async = require('async');
 var spawn = require('win-spawn');
 var md5 = require('MD5');
-var moment = require('moment');
 
 require('colors');
 
@@ -73,7 +72,7 @@ Function = wrap;
 module.exports.generator = function (config, logger, fileParser) {
 
   var self = this;
-  var firebaseUrl = 'webhook';
+  var firebaseUrl = config.get('webhook').firebase || 'webhook';
   var liveReloadPort = config.get('connect')['wh-server'].options.livereload;
   var websocket = null;
   var strictMode = false;
@@ -207,6 +206,10 @@ module.exports.generator = function (config, logger, fileParser) {
 
     var outputUrl = outFile.replace('index.html', '').replace('./.build', '');
     swigFunctions.setParams({ CURRENT_URL: outputUrl });
+
+    if(params.item) {
+      params.item = params._realGetItem(params.item._type, params.item._id);
+    }
 
     try {
       var output = swig.renderFile(inFile, params);
@@ -361,7 +364,7 @@ module.exports.generator = function (config, logger, fileParser) {
 
       entries.forEach(function(entry) {
         if(entry.entryName.indexOf('pages/') === 0
-           || entry.entryName.indexOf('templates/') === 0 
+           || entry.entryName.indexOf('templates/') === 0
            || entry.entryName.indexOf('static/') === 0) {
           zip.extractEntryTo(entry.entryName, '.', true, true);
         }
@@ -372,7 +375,7 @@ module.exports.generator = function (config, logger, fileParser) {
       wrench.rmdirSyncRecursive('.static-old');
 
       fs.unlinkSync('.reset.zip');
-      self.init(config.get('webhook').siteName, config.get('webhook').secretKey, true, function() {
+      self.init(config.get('webhook').siteName, config.get('webhook').secretKey, true, config.get('webhook').firebase, function() {
         callback();
       });
     });
@@ -474,52 +477,27 @@ module.exports.generator = function (config, logger, fileParser) {
     });
   };
 
-
-  // Handle custom type path here
-  // Basically, if there is a custom path defined, throw out newPath and construct it from base
-  // newPath should be ./.build/<typename> so repace newPath.split('/')[2] with new thing
-
-  // Support dates in the url and the typename
-  // All refer to the publish date of the item
-  // #Y - Year Full
-  // #y - Year last two digits
-  // #m - Month number, leading zero
-  // #n - Month number, no leading zero
-  // #F - Month name full (january, october, etc)
-  // #M - Month short name (jan, oct, etc)
-  // #d - Day leading zero
-  // #j - Day, no leading zero
-  // #T - The typename (e.g. articles)
-  var parseCustomUrl = function(url, object) {
-    var publishDate = moment(object.publish_date);
-
-    function replacer(match, timeIdent, offset, string){
-      if(timeIdent === 'Y') {
-        return moment.format('YYYY').toLowerCase();
-      } else if (timeIdent === 'y') {
-        return moment.format('YY').toLowerCase();
-      } else if (timeIdent === 'm') {
-        return moment.format('MM').toLowerCase();
-      } else if (timeIdent === 'n') {
-        return moment.format('M').toLowerCase();
-      } else if (timeIdent === 'F') {
-        return moment.format('MMMM').toLowerCase();
-      } else if (timeIdent === 'M') {
-        return moment.format('MMM').toLowerCase();
-      } else if (timeIdent === 'd') {
-        return moment.format('DD').toLowerCase();
-      } else if (timeIdent === 'j') {
-        return moment.format('D').toLowerCase();
-      } else if (timeIdent === 'T') {
-        return object._type.toLowerCase();
-      } else {
-        return match;
-      }
+  var generatedSlugs = {};
+  var generateSlug = function(value) {
+    if(!generatedSlugs[value._type]) {
+      generatedSlugs[value._type] = {};
     }
 
-    url = url.replace(/#(\w)/, replacer);
+    if(value.slug) {
+      generatedSlugs[value._type][value.slug] = true;
+      return value.slug;
+    }
+    var tmpSlug = slug(value.name).toLowerCase();
 
-    return url;
+    var no = 2;
+    while(generatedSlugs[value._type][tmpSlug]) {
+      tmpSlug = slug(value.name).toLowerCase() + '_' + no;
+      no++;
+    }
+
+    generatedSlugs[value._type][tmpSlug] = true;
+
+    return tmpSlug;
   }
 
   /**
@@ -529,6 +507,7 @@ module.exports.generator = function (config, logger, fileParser) {
    */
   this.renderTemplates = function(done, cb) {
     logger.ok('Rendering Templates');
+    generatedSlugs = {};
 
     getData(function(data, typeInfo) {
 
@@ -590,10 +569,10 @@ module.exports.generator = function (config, logger, fileParser) {
             if(baseName === 'list')
             {
 
-              if(typeInfo.customUrls && typeInfo.customUrls[objectName]) {
+              if(typeInfo[objectName] && typeInfo[objectName].customUrls && typeInfo[objectName].customUrls.listUrl) {
                 var customPathParts = newPath.split('/');
 
-                customPathParts[2] = typeInfo.customUrls[objectName].listUrl;
+                customPathParts[2] = typeInfo[objectName].customUrls.listUrl;
 
                 newPath = customPathParts.join('/');
               }
@@ -616,15 +595,17 @@ module.exports.generator = function (config, logger, fileParser) {
                   overrideFile = 'templates/' + objectName + '/layouts/' + val[templateWidgetName];
                 }
 
-                if(typeInfo.customUrls && typeInfo.customUrls[objectName]) {
+                if(typeInfo[objectName] && typeInfo[objectName].customUrls && typeInfo[objectName].customUrls.individualUrl) {
                   var customPathParts = baseNewPath.split('/');
 
-                  customPathParts[2] = parseCustomUrl(typeInfo.customUrls[objectName].individualUrl, val);
+                  customPathParts[2] = utils.parseCustomUrl(typeInfo[objectName].customUrls.individualUrl, val);
 
                   baseNewPath = customPathParts.join('/');
                 }
 
-                var tmpSlug = val.slug ? val.slug : slug(val.name).toLowerCase();
+                var tmpSlug = generateSlug(val);
+
+                val.slug = tmpSlug;
 
                 newPath = baseNewPath + '/' + tmpSlug + '/index.html';
 
@@ -661,15 +642,18 @@ module.exports.generator = function (config, logger, fileParser) {
               {
                 var val = publishedItems[key];
 
-                if(typeInfo.customUrls && typeInfo.customUrls[objectName]) {
+                if(typeInfo[objectName] && typeInfo[objectName].customUrls && typeInfo[objectName].customUrls.individualUrl) {
                   var customPathParts = baseNewPath.split('/');
 
-                  customPathParts[2] = parseCustomUrl(typeInfo.customUrls[objectName].individualUrl, val);
+                  customPathParts[2] = utils.parseCustomUrl(typeInfo[objectName].customUrls.individualUrl, val);
 
                   baseNewPath = customPathParts.join('/');
                 }
 
-                var tmpSlug = val.slug ? val.slug : slug(val.name).toLowerCase();
+                var tmpSlug = generateSlug(val);
+
+                val.slug = tmpSlug;
+
                 newPath = baseNewPath + '/' + tmpSlug + '/' + middlePathName + '/index.html';
                 writeTemplate(file, newPath, { item: val });
               }
@@ -855,7 +839,7 @@ module.exports.generator = function (config, logger, fileParser) {
 
         individualMD5 = md5(template);
         fs.writeFileSync(individual, template);
-        
+
         var lTemplate = _.template(listTemplate, { typeName: name });
 
         listMD5 = md5(lTemplate);
@@ -965,8 +949,11 @@ module.exports.generator = function (config, logger, fileParser) {
         } else if (message === 'supported_messages') {
           sock.send('done:' + JSON.stringify([
             'scaffolding', 'scaffolding_force', 'check_scaffolding', 'reset_files', 'supported_messages',
-            'push', 'build', 'preset', 'layouts', 'preset_localv2'
+            'push', 'build', 'preset', 'layouts', 'preset_localv2', 'generate_slug'
           ]));
+        } else if (message.indexOf('generate_slug:') === 0) {
+          var name = JSON.parse(message.replace('generate_slug:', ''));
+          sock.send('done:' + JSON.stringify(slug(name).toLowerCase()));
         } else if (message === 'push') {
           pushSite(function(error) {
             if(error) {
@@ -1026,11 +1013,15 @@ module.exports.generator = function (config, logger, fileParser) {
    * @param  {Boolean}   copyCms   True if the CMS should be overwritten, false otherwise
    * @param  {Function}  done      Callback to call when operation is done
    */
-  this.init = function(sitename, secretkey, copyCms, done) {
+  this.init = function(sitename, secretkey, copyCms, firebase, done) {
     var confFile = fs.readFileSync('./libs/.firebase.conf.jst');
 
+    if(firebase) {
+      confFile = fs.readFileSync('./libs/.firebase-custom.conf.jst');
+    }
+
     // TODO: Grab bucket information from server eventually, for now just use the site name
-    var templated = _.template(confFile, { secretKey: secretkey, siteName: sitename });
+    var templated = _.template(confFile, { secretKey: secretkey, siteName: sitename, firebase: firebase });
 
     fs.writeFileSync('./.firebase.conf', templated);
 

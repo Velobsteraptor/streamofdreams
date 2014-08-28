@@ -18,11 +18,8 @@
     <h1>{{ item.name }}</h1>
     <h2>{{ item.tag }}</h2>
     <h4>
-        {% for relation in getItems(item.author) %}
-            <a href="{{ url(relation) }}">{{ relation.name }}</a>
-            {% if not loop.last %},{% endif %}
-        {% endfor %}|
-        {{ item.publish_date|date('F d Y') }}
+        <a href="{{ url(item.author) }}">{{ item.author.name }}</a> 
+        | {{ item.publish_date|date('F d Y') }}
     </h4>
 </div>
 <div class="post">

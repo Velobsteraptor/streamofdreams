@@ -44,9 +44,8 @@
                         and <a href="{{ url(relation) }}">{{ relation.name }}</a>
                         {% if not loop.last %},{% endif %}
      			    {% endfor %}
-                    {% set rel = getItem(object.author) %}
-                    <a href="{{ url(rel) }}">{{ rel.name }}</a> |
-                    {{ object.publish_date|date('F d Y') }}
+                    <a href="{{ url(object.author) }}">{{ object.author.name }}</a>
+                    | {{ object.publish_date|date('F d Y') }}
                 </h4>
                 <p>
                     {{ object.description }}
