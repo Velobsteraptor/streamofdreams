@@ -44,7 +44,7 @@
     <ul>
         {% set videohost = getItems(item.videos_host) %}
         {% set videocohost = getItems(item.videos_cohost) %}
-        {% set author = getItems(item.article_author) %}
+        {% set author = getItems(item.articles_author) %}
         {% set reviewauthor = getItems(item.reviews_author) %}
         {% set relation = merge(videohost, videocohost, author, reviewauthor) %}
         {% set relation = relation|sort('publish_date', true) %}
