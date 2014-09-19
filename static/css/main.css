@@ -24,6 +24,7 @@
 @media (min-width: 1201px){
 body {
     background-color: #1A1E21;
+    color: #A8A8A8;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     letter-spacing: 0.5px;
     }
@@ -730,6 +731,7 @@ body {
 @media (max-width: 1200px) and (min-width: 801px){
 body {
     background-color: #1A1E21;
+    color: #A8A8A8;
 } 
     
 /* HEADER */
@@ -1436,6 +1438,7 @@ body {
 @media (max-width: 800px) and (min-width: 401px){
 body {
     background-color: #1A1E21;
+    color: #A8A8A8;
 }
     
 /* HEADER */
@@ -2155,6 +2158,7 @@ body {
 @media (max-width: 400px){
 body {
     background-color: #1A1E21;
+    color: #A8A8A8;
 }
     
 /* HEADER */
